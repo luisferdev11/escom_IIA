@@ -2,7 +2,7 @@
 Pseudocodigo:
 
 Entrada: Real a, b, c, d, e, f
-Salida: x, y,
+Salida: Real x, y,
 
 Imprimir "Escribe el coeficiente a: "
 Leer a
