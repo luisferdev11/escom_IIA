@@ -193,18 +193,11 @@ formulario.addEventListener("submit", (e) => {
     const col1 = get_col("op11", inputs_tab1["p"]);
     const col2 = get_col("op15", inputs_tab1["r"]);
 
-    // console.log(col1);
-    // console.log(col2);
-
     const col3 = get_col_2_var("op12", col1, inputs_tab1["q"]);
-    // console.log(col3);
 
     const col4 = get_col_2_var("op14", inputs_tab1["p"], col2);
-    // console.log(col4);
 
     const final = get_col_2_var("op13", col3, col4);
-
-    // console.log(final);
 
     const tabla = {
       p: inputs_tab1["p"],
@@ -226,9 +219,6 @@ formulario.addEventListener("submit", (e) => {
     const col1 = get_col("op24", inputs_tab2["p"]);
     const col2 = get_col("op26", inputs_tab2["s"]);
 
-    // console.log(col1);
-    // console.log(col2);
-
     let col3, col4;
     if (propositionSelect.value === "prop2") {
       col3 = get_col_2_var("op21", inputs_tab2["p"], inputs_tab2["q"]);
@@ -238,15 +228,9 @@ formulario.addEventListener("submit", (e) => {
       col4 = get_col_2_var("op21", inputs_tab2["p"], col3);
     }
 
-    // console.log(col3);
-
-    // console.log(col4);
-
     const col5 = get_col_2_var("op25", col1, col2);
-    // console.log(col5);
 
     const final = get_col_2_var("op23", col4, col5);
-    // console.log(final);
 
     const table = {
       p: inputs_tab2["p"],
@@ -329,14 +313,11 @@ formulario.addEventListener("submit", (e) => {
     ];
 
     if (header1Cells[3] == undefined) {
-      // console.log(header1Cells[3]);
       cells[3] = undefined;
     }
     if (header1Cells[4] == undefined) {
       cells[4] = undefined;
     }
-
-    // console.log(cells);
 
     cells.forEach((cell) => {
       if (cell != undefined) {
@@ -417,8 +398,6 @@ formulario.addEventListener("submit", (e) => {
     header2Cells[4] = "~p";
   }
 
-  console.log(header2Cells);
-
   header2Cells.forEach((cell) => {
     const th = document.createElement("th");
     th.textContent = cell;
@@ -443,7 +422,6 @@ formulario.addEventListener("submit", (e) => {
     ];
 
     if (header2Cells[4] == undefined) {
-      // console.log(header1Cells[3]);
       cells[4] = undefined;
     }
     if (header2Cells[5] == undefined) {
