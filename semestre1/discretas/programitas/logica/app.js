@@ -234,8 +234,8 @@ formulario.addEventListener("submit", (e) => {
       col3 = get_col_2_var("op21", inputs_tab2["p"], inputs_tab2["q"]);
       col4 = get_col_2_var("op22", col3, inputs_tab2["r"]);
     } else if (propositionSelect.value === "prop2-op2") {
-      col3 = get_col_2_var("op21", inputs_tab2["q"], inputs_tab2["r"]);
-      col4 = get_col_2_var("op22", inputs_tab2["p"], col3);
+      col3 = get_col_2_var("op22", inputs_tab2["q"], inputs_tab2["r"]);
+      col4 = get_col_2_var("op21", inputs_tab2["p"], col3);
     }
 
     // console.log(col3);
@@ -387,15 +387,15 @@ formulario.addEventListener("submit", (e) => {
       "s",
       "col1",
       "col2",
-      `q ${OPERATORS_SYMBOLS[LOCAL_PROP_OP["op21"]]} r`,
-      `p ${OPERATORS_SYMBOLS[LOCAL_PROP_OP["op22"]]} (q ${
-        OPERATORS_SYMBOLS[LOCAL_PROP_OP["op21"]]
+      `q ${OPERATORS_SYMBOLS[LOCAL_PROP_OP["op22"]]} r`,
+      `p ${OPERATORS_SYMBOLS[LOCAL_PROP_OP["op21"]]} (q ${
+        OPERATORS_SYMBOLS[LOCAL_PROP_OP["op22"]]
       } r)`,
       `${OPERATORS_SYMBOLS[LOCAL_PROP_OP["op24"]]} p ${
         OPERATORS_SYMBOLS[LOCAL_PROP_OP["op25"]]
       } ${OPERATORS_SYMBOLS[LOCAL_PROP_OP["op26"]]} s`,
-      `[(p ${OPERATORS_SYMBOLS[LOCAL_PROP_OP["op22"]]} (q ${
-        OPERATORS_SYMBOLS[LOCAL_PROP_OP["op21"]]
+      `[(p ${OPERATORS_SYMBOLS[LOCAL_PROP_OP["op21"]]} (q ${
+        OPERATORS_SYMBOLS[LOCAL_PROP_OP["op22"]]
       } r)] ${OPERATORS_SYMBOLS[LOCAL_PROP_OP["op23"]]} [${
         OPERATORS_SYMBOLS[LOCAL_PROP_OP["op24"]]
       } p ${OPERATORS_SYMBOLS[LOCAL_PROP_OP["op25"]]} ${
