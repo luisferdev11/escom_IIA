@@ -1,3 +1,111 @@
+// Get references to the relevant HTML elements
+const propositionSelect = document.getElementById("proposition-select");
+const proposition2 = document.querySelector(".prop2.op1.proposition");
+
+// Add an event listener to the select element
+propositionSelect.addEventListener("change", () => {
+  const LOCAL_PROP_OP = {
+    op21: document.getElementById("operators21").value,
+    op22: document.getElementById("operators22").value,
+    op23: document.getElementById("operators23").value,
+    op24: document.getElementById("operators24").value,
+    op25: document.getElementById("operators25").value,
+    op26: document.getElementById("operators26").value,
+  };
+
+  const isSelected = (value, operation) => {
+    if (value == operation) {
+      return "selected";
+    }
+    return "";
+  };
+
+  if (propositionSelect.value === "prop2") {
+    // prettier-ignore
+    proposition2.innerHTML = `<label for="prop2">Proposición 2</label>
+
+    ( ( p
+    <select name="operators" id="operators21">
+      <option ${isSelected("and", LOCAL_PROP_OP.op21)} value="and">^</option>
+      <option ${isSelected("or", LOCAL_PROP_OP.op21)} value="or">v</option>
+      <option ${isSelected("implicates", LOCAL_PROP_OP.op21)} value="implicates">-></option>
+      <option ${isSelected("biconditional", LOCAL_PROP_OP.op21)} value="biconditional"><-></option>
+    </select>
+    q )
+    <select name="operators" id="operators22">
+      <option ${isSelected("and", LOCAL_PROP_OP.op22)} value="and">^</option>
+      <option ${isSelected("or", LOCAL_PROP_OP.op22)} value="or">v</option>
+      <option ${isSelected("implicates", LOCAL_PROP_OP.op22)} value="implicates">-></option>
+      <option ${isSelected("biconditional", LOCAL_PROP_OP.op22)} value="biconditional"><-></option>
+    </select>
+    r )
+    <select name="operators" id="operators23">
+      <option ${isSelected("and", LOCAL_PROP_OP.op23)} value="and">^</option>
+      <option ${isSelected("or", LOCAL_PROP_OP.op23)} value="or">v</option>
+      <option ${isSelected("implicates", LOCAL_PROP_OP.op23)} value="implicates">-></option>
+      <option ${isSelected("biconditional", LOCAL_PROP_OP.op23)} value="biconditional"><-></option>
+    </select>
+    (
+    <select name="operators" id="operators24">
+      <option ${isSelected("nothing", LOCAL_PROP_OP.op24)} value="nothing"></option>
+      <option ${isSelected("not", LOCAL_PROP_OP.op24)} value="not">~</option>
+    </select>
+    p
+    <select name="operators" id="operators25">
+      <option ${isSelected("and", LOCAL_PROP_OP.op25)} value="and">^</option>
+      <option ${isSelected("or", LOCAL_PROP_OP.op25)} value="or">v</option>
+      <option ${isSelected("implicates", LOCAL_PROP_OP.op25)} value="implicates">-></option>
+      <option ${isSelected("biconditional", LOCAL_PROP_OP.op25)} value="biconditional"><-></option>
+    </select>
+    <select name="operators" id="operators26">
+      <option ${isSelected("nothing", LOCAL_PROP_OP.op26)} value="nothing"></option>
+      <option ${isSelected("not", LOCAL_PROP_OP.op26)} value="not">~</option>
+    </select>
+    s )`;
+  } else if (propositionSelect.value === "prop2-op2") {
+    // prettier-ignore
+    proposition2.innerHTML = `<label for="prop2">Proposición 2</label>
+    ( p
+    <select name="operators" id="operators21">
+      <option ${isSelected("and", LOCAL_PROP_OP.op21)} value="and">^</option>
+      <option ${isSelected("or", LOCAL_PROP_OP.op21)} value="or">v</option>
+      <option ${isSelected("implicates", LOCAL_PROP_OP.op21)} value="implicates">-></option>
+      <option ${isSelected("biconditional", LOCAL_PROP_OP.op21)} value="biconditional"><-></option>
+    </select>
+    ( q
+    <select name="operators" id="operators22">
+      <option ${isSelected("and", LOCAL_PROP_OP.op22)} value="and">^</option>
+      <option ${isSelected("or", LOCAL_PROP_OP.op22)} value="or">v</option>
+      <option ${isSelected("implicates", LOCAL_PROP_OP.op22)} value="implicates">-></option>
+      <option ${isSelected("biconditional", LOCAL_PROP_OP.op22)} value="biconditional"><-></option>
+    </select>
+    r ) )
+    <select name="operators" id="operators23">
+      <option ${isSelected("and", LOCAL_PROP_OP.op23)} value="and">^</option>
+      <option ${isSelected("or", LOCAL_PROP_OP.op23)} value="or">v</option>
+      <option ${isSelected("implicates", LOCAL_PROP_OP.op23)} value="implicates">-></option>
+      <option ${isSelected("biconditional", LOCAL_PROP_OP.op23)} value="biconditional"><-></option>
+    </select>
+    (
+    <select name="operators" id="operators24">
+      <option ${isSelected("nothing", LOCAL_PROP_OP.op24)} value="nothing"></option>
+      <option ${isSelected("not", LOCAL_PROP_OP.op24)} value="not">~</option>
+    </select>
+    p
+    <select name="operators" id="operators25">
+      <option ${isSelected("and", LOCAL_PROP_OP.op25)} value="and">^</option>
+      <option ${isSelected("or", LOCAL_PROP_OP.op25)} value="or">v</option>
+      <option ${isSelected("implicates", LOCAL_PROP_OP.op25)} value="implicates">-></option>
+      <option ${isSelected("biconditional", LOCAL_PROP_OP.op25)} value="biconditional"><-></option>
+    </select>
+    <select name="operators" id="operators26">
+      <option ${isSelected("nothing", LOCAL_PROP_OP.op26)} value="nothing"></option>
+      <option ${isSelected("not", LOCAL_PROP_OP.op26)} value="not">~</option>
+    </select>
+    s )`;
+  }
+});
+
 function arrayEquals(a, b) {
   return (
     Array.isArray(a) &&
@@ -121,10 +229,17 @@ formulario.addEventListener("submit", (e) => {
     // console.log(col1);
     // console.log(col2);
 
-    const col3 = get_col_2_var("op21", inputs_tab2["p"], inputs_tab2["q"]);
+    let col3, col4;
+    if (propositionSelect.value === "prop2") {
+      col3 = get_col_2_var("op21", inputs_tab2["p"], inputs_tab2["q"]);
+      col4 = get_col_2_var("op22", col3, inputs_tab2["r"]);
+    } else if (propositionSelect.value === "prop2-op2") {
+      col3 = get_col_2_var("op21", inputs_tab2["q"], inputs_tab2["r"]);
+      col4 = get_col_2_var("op22", inputs_tab2["p"], col3);
+    }
+
     // console.log(col3);
 
-    const col4 = get_col_2_var("op22", col3, inputs_tab2["r"]);
     // console.log(col4);
 
     const col5 = get_col_2_var("op25", col1, col2);
@@ -239,28 +354,55 @@ formulario.addEventListener("submit", (e) => {
   // create table header
   const header2 = document.createElement("tr");
 
-  const header2Cells = [
-    "p",
-    "q",
-    "r",
-    "s",
-    "col1",
-    "col2",
-    `p ${OPERATORS_SYMBOLS[LOCAL_PROP_OP["op21"]]} q`,
-    `(p ${OPERATORS_SYMBOLS[LOCAL_PROP_OP["op21"]]} q) ${
-      OPERATORS_SYMBOLS[LOCAL_PROP_OP["op22"]]
-    } r`,
-    `${OPERATORS_SYMBOLS[LOCAL_PROP_OP["op24"]]} p ${
-      OPERATORS_SYMBOLS[LOCAL_PROP_OP["op25"]]
-    } ${OPERATORS_SYMBOLS[LOCAL_PROP_OP["op26"]]} s`,
-    `[(p ${OPERATORS_SYMBOLS[LOCAL_PROP_OP["op21"]]} q) ${
-      OPERATORS_SYMBOLS[LOCAL_PROP_OP["op22"]]
-    } r] ${OPERATORS_SYMBOLS[LOCAL_PROP_OP["op23"]]} [${
-      OPERATORS_SYMBOLS[LOCAL_PROP_OP["op24"]]
-    } p ${OPERATORS_SYMBOLS[LOCAL_PROP_OP["op25"]]} ${
-      OPERATORS_SYMBOLS[LOCAL_PROP_OP["op26"]]
-    } s]`,
-  ];
+  let header2Cells;
+
+  if (propositionSelect.value === "prop2") {
+    header2Cells = [
+      "p",
+      "q",
+      "r",
+      "s",
+      "col1",
+      "col2",
+      `p ${OPERATORS_SYMBOLS[LOCAL_PROP_OP["op21"]]} q`,
+      `(p ${OPERATORS_SYMBOLS[LOCAL_PROP_OP["op21"]]} q) ${
+        OPERATORS_SYMBOLS[LOCAL_PROP_OP["op22"]]
+      } r`,
+      `${OPERATORS_SYMBOLS[LOCAL_PROP_OP["op24"]]} p ${
+        OPERATORS_SYMBOLS[LOCAL_PROP_OP["op25"]]
+      } ${OPERATORS_SYMBOLS[LOCAL_PROP_OP["op26"]]} s`,
+      `[(p ${OPERATORS_SYMBOLS[LOCAL_PROP_OP["op21"]]} q) ${
+        OPERATORS_SYMBOLS[LOCAL_PROP_OP["op22"]]
+      } r] ${OPERATORS_SYMBOLS[LOCAL_PROP_OP["op23"]]} [${
+        OPERATORS_SYMBOLS[LOCAL_PROP_OP["op24"]]
+      } p ${OPERATORS_SYMBOLS[LOCAL_PROP_OP["op25"]]} ${
+        OPERATORS_SYMBOLS[LOCAL_PROP_OP["op26"]]
+      } s]`,
+    ];
+  } else if (propositionSelect.value === "prop2-op2") {
+    header2Cells = [
+      "p",
+      "q",
+      "r",
+      "s",
+      "col1",
+      "col2",
+      `q ${OPERATORS_SYMBOLS[LOCAL_PROP_OP["op21"]]} r`,
+      `p ${OPERATORS_SYMBOLS[LOCAL_PROP_OP["op22"]]} (q ${
+        OPERATORS_SYMBOLS[LOCAL_PROP_OP["op21"]]
+      } r)`,
+      `${OPERATORS_SYMBOLS[LOCAL_PROP_OP["op24"]]} p ${
+        OPERATORS_SYMBOLS[LOCAL_PROP_OP["op25"]]
+      } ${OPERATORS_SYMBOLS[LOCAL_PROP_OP["op26"]]} s`,
+      `[(p ${OPERATORS_SYMBOLS[LOCAL_PROP_OP["op22"]]} (q ${
+        OPERATORS_SYMBOLS[LOCAL_PROP_OP["op21"]]
+      } r)] ${OPERATORS_SYMBOLS[LOCAL_PROP_OP["op23"]]} [${
+        OPERATORS_SYMBOLS[LOCAL_PROP_OP["op24"]]
+      } p ${OPERATORS_SYMBOLS[LOCAL_PROP_OP["op25"]]} ${
+        OPERATORS_SYMBOLS[LOCAL_PROP_OP["op26"]]
+      } s]`,
+    ];
+  }
 
   if (arrayEquals(tabla2.col2, inputs_tab2["s"])) {
     // header1Cells.splice(4, 1);

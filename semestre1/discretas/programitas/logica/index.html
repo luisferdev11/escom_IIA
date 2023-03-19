@@ -43,16 +43,18 @@
         </select>
         r )
       </p>
-      <p class="prop2">
+
+      <p class="prop2 op1 proposition" id="prop2">
         <label for="prop2">Proposición 2</label>
-        ( p
+
+        ( ( p
         <select name="operators" id="operators21">
           <option value="and">^</option>
           <option value="or">v</option>
           <option value="implicates">-></option>
           <option value="biconditional"><-></option>
         </select>
-        q
+        q )
         <select name="operators" id="operators22">
           <option value="and">^</option>
           <option value="or">v</option>
@@ -84,9 +86,20 @@
         </select>
         s )
       </p>
+
+      <label for="proposition-select"
+        >Escoge el orden en el que se harán las operaciones de p [] q [] r:
+      </label>
+      <select name="proposition-select" id="proposition-select">
+        <option value="prop2">( p [] q ) [] r</option>
+        <option value="prop2-op2">p [] (q [] r )</option>
+      </select>
+      <p></p>
+
       <button type="submit">Enviar</button>
     </form>
     <div id="table-container"></div>
   </body>
   <script src="app.js"></script>
+  <script src="front.js"></script>
 </html>
