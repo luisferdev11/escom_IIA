@@ -23,7 +23,6 @@ propositionSelect.addEventListener("change", () => {
   if (propositionSelect.value === "prop2") {
     // prettier-ignore
     proposition2.innerHTML = `<label for="prop2">Proposición 2</label>
-
     ( ( p
     <select name="operators" id="operators21">
       <option ${isSelected("and", LOCAL_PROP_OP.op21)} value="and">^</option>
