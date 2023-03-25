@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Darwin</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <form action="" method="post" id="formulario">
+      <p class="prop1">
+        <label for="prop1">P<sub>1</sub></label>
+        (
+        <select name="operators" id="operators11">
+          <option value="nothing"></option>
+          <option value="not">~</option>
+        </select>
+        p
+        <select name="operators" id="operators12">
+          <option value="and">^</option>
+          <option value="or">v</option>
+          <option value="implicates">-></option>
+          <option value="biconditional"><-></option>
+        </select>
+        <select name="operators" id="operators13">
+          <option value="nothing"></option>
+          <option value="not">~</option>
+        </select>
+        q )
+      </p>
+
+      <p class="prop2">
+        <label for="prop2">P<sub>2</sub></label>
+        (
+        <select name="operators" id="operators21">
+          <option value="nothing"></option>
+          <option value="not">~</option>
+        </select>
+        q
+        <select name="operators" id="operators22">
+          <option value="and">^</option>
+          <option value="or">v</option>
+          <option value="implicates">-></option>
+          <option value="biconditional"><-></option>
+        </select>
+        <select name="operators" id="operators23">
+          <option value="nothing"></option>
+          <option value="not">~</option>
+        </select>
+        r )
+      </p>
+
+      <p class="prop3">
+        <label for="prop3">P<sub>3</sub></label>
+        (
+        <select name="operators" id="operators31">
+          <option value="nothing"></option>
+          <option value="not">~</option>
+        </select>
+        r
+        <select name="operators" id="operators32">
+          <option value="and">^</option>
+          <option value="or">v</option>
+          <option value="implicates">-></option>
+          <option value="biconditional"><-></option>
+        </select>
+        <select name="operators" id="operators33">
+          <option value="nothing"></option>
+          <option value="not">~</option>
+        </select>
+        s )
+      </p>
+
+      <p class="prop4">
+        <label for="prop4">P<sub>4</sub></label>
+        (
+        <select name="operators" id="operators41">
+          <option value="nothing"></option>
+          <option value="not">~</option>
+        </select>
+        s
+        <select name="operators" id="operators42">
+          <option value="and">^</option>
+          <option value="or">v</option>
+          <option value="implicates">-></option>
+          <option value="biconditional"><-></option>
+        </select>
+        <select name="operators" id="operators43">
+          <option value="nothing"></option>
+          <option value="not">~</option>
+        </select>
+        t )
+      </p>
+
+      <hr />
+
+      <p class="conc">
+        <label for="conc">C</label>
+        (
+        <select name="operators" id="operators51">
+          <option value="nothing"></option>
+          <option value="not">~</option>
+        </select>
+        p
+        <select name="operators" id="operators52">
+          <option value="and">^</option>
+          <option value="or">v</option>
+          <option value="implicates">-></option>
+          <option value="biconditional"><-></option>
+        </select>
+        <select name="operators" id="operators53">
+          <option value="nothing"></option>
+          <option value="not">~</option>
+        </select>
+        q )
+        <select name="operators" id="operators54">
+          <option value="and">^</option>
+          <option value="or">v</option>
+          <option value="implicates">-></option>
+          <option value="biconditional"><-></option>
+        </select>
+        <select name="operators" id="operators55">
+          <option value="nothing"></option>
+          <option value="not">~</option>
+        </select>
+        r
+      </p>
+
+      <button type="submit">Enviar</button>
+    </form>
+
+    <div id="table-container"></div>
+  </body>
+  <script src="app.js"></script>
+</html>
