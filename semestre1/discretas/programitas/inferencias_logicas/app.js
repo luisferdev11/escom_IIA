@@ -48,12 +48,27 @@ const calculatePrimitives = (n) => {
 };
 
 const inputs_tab = calculatePrimitives(5);
-console.log(inputs_tab);
 
 const formulario = document.getElementById("formulario");
 
 formulario.addEventListener("submit", (e) => {
   event.preventDefault();
+
+  const PROP_SELECTION = {
+    prop1: document.getElementById("prop1").checked,
+    prop2: document.getElementById("prop2").checked,
+    prop3: document.getElementById("prop3").checked,
+    prop4: document.getElementById("prop4").checked,
+  };
+
+  let primitives;
+  if (PROP_SELECTION.prop4) {
+    primitives = calculatePrimitives(5);
+  } else if (PROP_SELECTION.prop3) {
+    primitives = calculatePrimitives(4);
+  } else {
+    primitives = calculatePrimitives(3);
+  }
 
   const LOCAL_PROP_OP = {
     op11: document.getElementById("operators11").value,
@@ -95,6 +110,20 @@ formulario.addEventListener("submit", (e) => {
   const get_col_2_var = (operation, arr1, arr2) => {
     const result = [];
 
+    if (arr1 == undefined && arr2 != undefined) {
+      for (let i = 0; i < arr2.length; i++) {
+        result.push(arr2[i]);
+      }
+      return result;
+    } else if (arr2 == undefined && arr1 != undefined) {
+      for (let i = 0; i < arr1.length; i++) {
+        result.push(arr1[i]);
+      }
+      return result;
+    } else if (arr1 == undefined && arr2 == undefined) {
+      return undefined;
+    }
+
     for (let i = 0; i < arr1.length; i++) {
       result.push(OPERATORS[LOCAL_PROP_OP[operation]](arr1[i], arr2[i]));
     }
@@ -103,29 +132,41 @@ formulario.addEventListener("submit", (e) => {
   };
 
   const get_tab = () => {
-    const A = get_col_2_var(
-      "op12",
-      get_col("op11", inputs_tab.p),
-      get_col("op13", inputs_tab.q)
-    );
+    let A;
+    if (PROP_SELECTION.prop1) {
+      A = get_col_2_var(
+        "op12",
+        get_col("op11", primitives.p),
+        get_col("op13", primitives.q)
+      );
+    }
 
-    const B = get_col_2_var(
-      "op22",
-      get_col("op21", inputs_tab.q),
-      get_col("op23", inputs_tab.r)
-    );
+    let B;
+    if (PROP_SELECTION.prop2) {
+      B = get_col_2_var(
+        "op22",
+        get_col("op21", primitives.q),
+        get_col("op23", primitives.r)
+      );
+    }
 
-    const C = get_col_2_var(
-      "op32",
-      get_col("op31", inputs_tab.r),
-      get_col("op33", inputs_tab.s)
-    );
+    let C;
+    if (PROP_SELECTION.prop3) {
+      C = get_col_2_var(
+        "op32",
+        get_col("op31", primitives.r),
+        get_col("op33", primitives.s)
+      );
+    }
 
-    const D = get_col_2_var(
-      "op42",
-      get_col("op41", inputs_tab.s),
-      get_col("op43", inputs_tab.t)
-    );
+    let D;
+    if (PROP_SELECTION.prop4) {
+      D = get_col_2_var(
+        "op42",
+        get_col("op41", primitives.s),
+        get_col("op43", primitives.t)
+      );
+    }
 
     const E = get_col_2_var(
       "and",
@@ -137,15 +178,15 @@ formulario.addEventListener("submit", (e) => {
       "op54",
       get_col_2_var(
         "op52",
-        get_col("op51", inputs_tab.p),
-        get_col("op53", inputs_tab.q)
+        get_col("op51", primitives.p),
+        get_col("op53", primitives.q)
       ),
-      get_col("op55", inputs_tab.r)
+      get_col("op55", primitives.r)
     );
 
     const FINAL = get_col_2_var("implicates", E, F);
 
-    const tabla = inputs_tab;
+    const tabla = primitives;
 
     tabla.A = A;
     tabla.B = B;
@@ -168,32 +209,64 @@ formulario.addEventListener("submit", (e) => {
   // create table header
   const header = document.createElement("tr");
 
-  let headerCells = [
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    `${OPERATORS_SYMBOLS[LOCAL_PROP_OP.op11]} p ${
-      OPERATORS_SYMBOLS[LOCAL_PROP_OP.op12]
-    } ${OPERATORS_SYMBOLS[LOCAL_PROP_OP.op13]} q = A`,
-    `${OPERATORS_SYMBOLS[LOCAL_PROP_OP.op21]} q ${
-      OPERATORS_SYMBOLS[LOCAL_PROP_OP.op22]
-    } ${OPERATORS_SYMBOLS[LOCAL_PROP_OP.op23]} r = B`,
-    `${OPERATORS_SYMBOLS[LOCAL_PROP_OP.op31]} r ${
-      OPERATORS_SYMBOLS[LOCAL_PROP_OP.op32]
-    } ${OPERATORS_SYMBOLS[LOCAL_PROP_OP.op33]} s = C`,
-    `${OPERATORS_SYMBOLS[LOCAL_PROP_OP.op41]} s ${
-      OPERATORS_SYMBOLS[LOCAL_PROP_OP.op42]
-    } ${OPERATORS_SYMBOLS[LOCAL_PROP_OP.op43]} t = D`,
-    "A ^ B ^ C ^ D = E",
+  const headerCells = ["p", "q", "r"];
+
+  if (tabla.D != undefined) {
+    headerCells.push("s");
+    headerCells.push("t");
+  } else if (tabla.C != undefined) {
+    headerCells.push("s");
+  }
+
+  const header_which_select = [];
+  if (PROP_SELECTION.prop1) {
+    headerCells.push(
+      `${OPERATORS_SYMBOLS[LOCAL_PROP_OP.op11]} p ${
+        OPERATORS_SYMBOLS[LOCAL_PROP_OP.op12]
+      } ${OPERATORS_SYMBOLS[LOCAL_PROP_OP.op13]} q = A`
+    );
+    header_which_select.push("A");
+  }
+
+  if (PROP_SELECTION.prop2) {
+    headerCells.push(
+      `${OPERATORS_SYMBOLS[LOCAL_PROP_OP.op21]} q ${
+        OPERATORS_SYMBOLS[LOCAL_PROP_OP.op22]
+      } ${OPERATORS_SYMBOLS[LOCAL_PROP_OP.op23]} r = B`
+    );
+    header_which_select.push("B");
+  }
+
+  if (PROP_SELECTION.prop3) {
+    headerCells.push(
+      `${OPERATORS_SYMBOLS[LOCAL_PROP_OP.op31]} r ${
+        OPERATORS_SYMBOLS[LOCAL_PROP_OP.op32]
+      } ${OPERATORS_SYMBOLS[LOCAL_PROP_OP.op33]} s = C`
+    );
+    header_which_select.push("C");
+  }
+
+  if (PROP_SELECTION.prop4) {
+    headerCells.push(
+      `${OPERATORS_SYMBOLS[LOCAL_PROP_OP.op41]} s ${
+        OPERATORS_SYMBOLS[LOCAL_PROP_OP.op42]
+      } ${OPERATORS_SYMBOLS[LOCAL_PROP_OP.op43]} t = D`
+    );
+    header_which_select.push("D");
+  }
+
+  headerCells.push(`${header_which_select.join(" ^ ")} = E`);
+  headerCells.push(
     `( ${OPERATORS_SYMBOLS[LOCAL_PROP_OP.op51]} p ${
       OPERATORS_SYMBOLS[LOCAL_PROP_OP.op52]
     }${OPERATORS_SYMBOLS[LOCAL_PROP_OP.op53]} q ) ${
       OPERATORS_SYMBOLS[LOCAL_PROP_OP.op54]
-    } ${OPERATORS_SYMBOLS[LOCAL_PROP_OP.op55]} r = F`,
-    "E -> F",
-  ];
+    } ${OPERATORS_SYMBOLS[LOCAL_PROP_OP.op55]} r = F`
+  );
+
+  headerCells.push("E -> F");
+
+  console.log(headerCells);
 
   headerCells.forEach((cell) => {
     const th = document.createElement("th");
@@ -205,20 +278,34 @@ formulario.addEventListener("submit", (e) => {
   // create table body
   for (let i = 0; i < tabla.p.length; i++) {
     const row = document.createElement("tr");
-    const cells = [
-      tabla.p[i],
-      tabla.q[i],
-      tabla.r[i],
-      tabla.s[i],
-      tabla.t[i],
-      tabla.A[i],
-      tabla.B[i],
-      tabla.C[i],
-      tabla.D[i],
-      tabla.E[i],
-      tabla.F[i],
-      tabla.FINAL[i],
-    ];
+    const cells = [tabla.p[i], tabla.q[i], tabla.r[i]];
+
+    if (tabla.D != undefined) {
+      cells.push(tabla.s[i]);
+      cells.push(tabla.t[i]);
+    } else if (tabla.C != undefined) {
+      cells.push(tabla.s[i]);
+    }
+
+    if (PROP_SELECTION.prop1) {
+      cells.push(tabla.A[i]);
+    }
+
+    if (PROP_SELECTION.prop2) {
+      cells.push(tabla.B[i]);
+    }
+
+    if (PROP_SELECTION.prop3) {
+      cells.push(tabla.C[i]);
+    }
+
+    if (PROP_SELECTION.prop4) {
+      cells.push(tabla.D[i]);
+    }
+
+    cells.push(tabla.E[i]);
+    cells.push(tabla.F[i]);
+    cells.push(tabla.FINAL[i]);
 
     cells.forEach((cell) => {
       if (cell != undefined) {
