@@ -1,3 +1,44 @@
+/*
+Pseudocódigo:
+
+Entrada: Entero hospitalization_time, age, disease
+Salida: Flotante total_fee
+
+Constantes: Entero DIABETES = 1500, HYPERTENSION = 1100, CANCER = 2200
+
+Imprimir "Ingrese el tiempo de hospitalización en días: "
+Leer hospitalization_time
+
+Imprimir "Ingrese la edad del paciente: "
+Leer age
+
+Imprimir "Ingrese el tipo de enfermedad que tiene el paciente."
+Imprimir "Presione 1 si se trata de diabetes."
+Imprimir "Presione 2 si se trata de hipertensión."
+Imprimir "Presione 3 si se trata de cáncer.\n"
+Leer disease
+
+Si (disease == 1) entonces
+    total_fee = DIABETES
+sino si (disease == 2) entonces
+    total_fee = HYPERTENSION
+sino si (disease == 3) entonces
+    total_fee = CANCER
+sino
+    Imprimir "Valores no válidos"
+    Terminar el programa
+finSi
+
+total_fee = total_fee * hospitalization_time
+
+Si (age >= 12 y age <= 25) entonces
+    total_fee = total_fee * 1.10
+finSi
+
+Imprimir "El costo total será de: " concatenar total_fee
+
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 
