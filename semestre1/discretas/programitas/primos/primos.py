@@ -11,6 +11,7 @@ def es_primo(n):
         return False
     for i in range(3, int(math.sqrt(n)) + 1, 2):
         if n % i == 0:
+            print(f"Es divisor de {i}")
             return False
     return True
 
