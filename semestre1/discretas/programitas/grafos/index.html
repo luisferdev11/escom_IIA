@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Grafos</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-container">
+        <label for="n-input">Value of n:</label>
+        <input type="number" id="n-input" class="input-field" />
+        <label for="m-input">Value of m:</label>
+        <input type="number" id="m-input" class="input-field" />
+        <button class="gen-btn" onclick="generarGrafo()">Generate Graph</button>
+      </div>
+      <div id="graph-container"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Grafos</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="contenedor">
+      <div class="form-container">
+        <label for="n-input">Valor de n:</label>
+        <input type="number" id="n-input" />
+        <label for="m-input">Valor de m:</label>
+        <input type="number" id="m-input" />
+        <button onclick="generarGrafo()">Generar Grafo</button>
+      </div>
+      <div id="graph-container"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html> -->
