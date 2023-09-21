@@ -1,0 +1,17 @@
+Ejemplo: Raiz cuadrada -> Algoritmo de Euclides
+
+Inicio: 
+
+	calculaRaizCuadrada(valor):
+		declarar i, aux=0.001;
+		inicializar i=0.01;
+		
+		mientras que i * i < valor:
+			actualizar i += aux;
+		fin mientras;
+		
+		actualizar i -= aux;
+		
+		imprimir "La raiz cuadrada es 'i'"
+		
+	fin calculaRaizCuadrada;
