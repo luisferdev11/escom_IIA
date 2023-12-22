@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define TAM 1000
+#define TAM 10
 
 int* crearArreglo() {
     int* arreglo = calloc(TAM, sizeof(int));
