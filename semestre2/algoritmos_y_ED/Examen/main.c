@@ -104,8 +104,6 @@
 //     return 0;
 // }
 
-#include "cola.h"
-
 // int main() {
 //     Cola* miCola = crearCola();
 //     Dato valor, valorExtraido;
@@ -156,6 +154,7 @@
 
 #include <string.h>
 
+#include "cola.h"
 #include "lista_circular.h"
 #define MAX_CHAR 256
 #define MAX_CODIGO_LONGITUD 100
@@ -322,6 +321,48 @@ void decodificarTexto(const char* nombreArchivoCodificado, const char* nombreArc
     fclose(archivoDecodificado);
 }
 
+void decodificarTextoConCola(const char* nombreArchivoCodificado, const char* nombreArchivoDecodificado, Arbol arbolHuffman) {
+    FILE* archivoCodificado = fopen(nombreArchivoCodificado, "r");
+    FILE* archivoDecodificado = fopen(nombreArchivoDecodificado, "w");
+    Cola* cola = crearCola();
+    char bit;
+    Arbol actual = arbolHuffman;
+    Dato_cola dato;
+
+    if (archivoCodificado == NULL || archivoDecodificado == NULL) {
+        perror("Error al abrir los archivos");
+        return;
+    }
+
+    // Encolar cada bit del archivo codificado en la cola
+    while ((bit = fgetc(archivoCodificado)) != EOF) {
+        if (bit == '0' || bit == '1') {
+            dato.valor = bit - '0';  // Convierte el caracter '0' o '1' a entero 0 o 1
+            encolar(cola, dato);
+        }
+    }
+
+    // Procesar cada bit en la cola para decodificar
+    while (!esColaVacia(cola)) {
+        desencolar(cola, &dato);
+        if (dato.valor == 0) {
+            actual = actual->izq;
+        } else {
+            actual = actual->der;
+        }
+
+        // Si es un nodo hoja, escribe el carácter y reinicia al nodo raíz
+        if (!actual->izq && !actual->der) {
+            fputc(actual->info.caracter, archivoDecodificado);
+            actual = arbolHuffman;
+        }
+    }
+
+    fclose(archivoCodificado);
+    fclose(archivoDecodificado);
+    liberarCola(cola);
+}
+
 int main() {
     // Definir el nombre del archivo
     const char* nombreArchivo = "ey.txt";
@@ -353,7 +394,7 @@ int main() {
     // Codificar el texto y guardarlo en un archivo
     codificarTexto(nombreArchivo, "archivo_codificado.txt", codigos, numCodigos);
 
-    decodificarTexto("archivo_codificado.txt", "archivo_decodificado.txt", arbolHuffman);
+    decodificarTextoConCola("archivo_codificado.txt", "archivo_decodificado.txt", arbolHuffman);
 
     // Liberar la memoria de la lista
     liberarLista(listaFrecuencias);
