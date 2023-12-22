@@ -1,5 +1,6 @@
 
 #include "lista_circular.h"
+#define MAX_CHAR 256
 
 // Función para crear una nueva lista circular
 ListaCircular* crearLista() {
@@ -210,6 +211,21 @@ Nodo_lcde* extraerMenor(ListaCircular* lista) {
 
     menor->siguiente = menor->anterior = NULL;  // Desvincular el nodo extraído de la lista
     return menor;
+}
+
+Nodo_lcde* combinarNodos(Nodo_lcde* nodo1, Nodo_lcde* nodo2) {
+    // Crear un nuevo nodo del árbol con la suma de las frecuencias
+    Dato_arbol nuevoDato = {0, '\0', nodo1->dato.arbol->info.frecuencia + nodo2->dato.arbol->info.frecuencia};
+    Arbol nuevoArbol = crearNodoArbol(nuevoDato);  // Asumiendo que esta función está definida en arboles.c
+
+    // Configurar los hijos izquierdo y derecho del nuevo árbol
+    nuevoArbol->izq = nodo1->dato.arbol;
+    nuevoArbol->der = nodo2->dato.arbol;
+
+    Dato_lcde nuevoDatoLCDE = {0, nuevoArbol};
+    // Crear un nuevo nodo para la lista circular y asignar el nuevo árbol
+    Nodo_lcde* nuevoNodo = crearNodoLCDE(nuevoDatoLCDE);  // Asumiendo que esta función está definida en lista_circular.c
+    return nuevoNodo;
 }
 
 // void insertarOrdenado(ListaCircular* lista, Nodo_lcde* nuevoNodo) {

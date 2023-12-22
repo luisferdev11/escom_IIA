@@ -1,3 +1,6 @@
+#ifndef ARBOLES_H
+#define ARBOLES_H
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -29,3 +32,5 @@ void reemplazar(Arbol* raiz);
 int cantidadHojas(Arbol raiz);
 int alturaArbol(Arbol raiz);
 Arbol nodoMinimo(Arbol raiz);
+
+#endif  // ARBOLES_H

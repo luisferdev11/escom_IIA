@@ -1,97 +1,122 @@
-#include "stdio.h"
-#include "stdlib.h"
-#include "string.h"
-/* Estructura de un nodo del árbol */
-typedef struct nodo arbol;
-struct nodo {
-    int frecuencia;
-    char dato;
-    arbol *derecho;
-    arbol *izquierdo;
-};
-/* Mensaje de ERROR */
-void error(void) {
-    perror("\n\t\aERROR: Memoria insuficiente...");
-    exit(1);
-}
-/* Crea un nuevo nodo del tipo de la estructura */
-arbol *Nuevo() {
-    arbol *q = (arbol *)malloc(sizeof(arbol));
-    if (!q) error();
-    return (q);
+#include "huffman.h"
+#define MAX_CODIGO_LONGITUD 100
+
+// Función para crear el Árbol de Huffman a partir de la lista circular
+Arbol crearArbolHuffman(ListaCircular* lista) {
+    int tamaño = longitud(lista);
+
+    while (tamaño > 1) {  // Asumiendo que ListaCircular tiene un campo tamaño
+        // Extraer los dos nodos con menor frecuencia
+        Nodo_lcde* nodo1 = extraerMenor(lista);  // Asumiendo que esta función está definida
+        Nodo_lcde* nodo2 = extraerMenor(lista);  // Asumiendo que esta función está definida
+
+        // Combinar los nodos y obtener un nuevo nodo
+        Nodo_lcde* nuevoNodo = combinarNodos(nodo1, nodo2);
+
+        // Insertar el nuevo nodo en la lista, manteniendo el orden por frecuencia
+        // insertarOrdenado(lista, nuevoNodo);  // Asumiendo que esta función está definida
+
+        insertarFinal(lista, nuevoNodo->dato);
+
+        tamaño = longitud(lista);
+        printf("Tamaño de la lista temporal: %d\n", tamaño);
+    }
+
+    printf("Tamaño de la lista terminando while: %d\n", tamaño);
+
+    // Al final, el último nodo en la lista es la raíz del Árbol de Huffman
+    return lista->cabeza->dato.arbol;  // Asumiendo que ListaCircular tiene una cabeza
 }
 
-/* Inserta un nuevo nodo en el árbol */
-arbol *insertar(char dato, int x) {
-    arbol *q;
-    q = Nuevo();
-    q->frecuencia = x;
-    q->dato = dato;
-    q->derecho = q->izquierdo = NULL;
-    return (q);
+void generarCodigosDFS(Arbol raiz, char* codigo, int longitud, CodigoHuffman* codigos, int* indice) {
+    if (raiz) {
+        // Si es un nodo hoja, almacena el carácter y su código
+        if (!raiz->izq && !raiz->der) {
+            codigos[*indice].caracter = raiz->info.caracter;
+            codigos[*indice].codigo = (char*)malloc(longitud + 1);
+            strncpy(codigos[*indice].codigo, codigo, longitud);
+            codigos[*indice].codigo[longitud] = '\0';
+            (*indice)++;
+            return;
+        }
+
+        // Añadir un '0' si vamos a la izquierda, '1' si vamos a la derecha
+        codigo[longitud] = '0';
+        generarCodigosDFS(raiz->izq, codigo, longitud + 1, codigos, indice);
+
+        codigo[longitud] = '1';
+
+        generarCodigosDFS(raiz->der, codigo, longitud + 1, codigos, indice);
+    }
 }
-/* Ordena los nodos del árbol de acuerdo a su frecuencia */
-void ordenar(arbol *a[], int n) { /* Ripple Sort */
-    int i, j;
-    arbol *temp;
-    for (i = 0; i < n - 1; i++)
-        for (j = i; j < n; j++)
-            if (a[i]->frecuencia > a[j]->frecuencia) {
-                temp = a[i];
-                a[i] = a[j];
-                a[j] = temp;
+
+void generarCodigosHuffman(Arbol arbolHuffman, CodigoHuffman* codigos, int* numCodigos) {
+    char codigo[MAX_CODIGO_LONGITUD];
+    generarCodigosDFS(arbolHuffman, codigo, 0, codigos, numCodigos);
+}
+
+void codificarTexto(const char* nombreArchivoEntrada, const char* nombreArchivoSalida, CodigoHuffman* codigos, int numCodigos) {
+    FILE* archivoEntrada = fopen(nombreArchivoEntrada, "r");
+    FILE* archivoSalida = fopen(nombreArchivoSalida, "w");
+    char ch;
+
+    if (archivoEntrada == NULL || archivoSalida == NULL) {
+        perror("Error al abrir los archivos");
+        return;
+    }
+
+    while ((ch = fgetc(archivoEntrada)) != EOF) {
+        // Buscar el código de Huffman para el carácter actual
+        for (int i = 0; i < numCodigos; i++) {
+            if (codigos[i].caracter == ch) {
+                fputs(codigos[i].codigo, archivoSalida);
+                break;
             }
+        }
+    }
+
+    fclose(archivoEntrada);
+    fclose(archivoSalida);
 }
-/* Asigna un código a cada carácter */
-void asigna_codigo(arbol *p, int c[], int n) {
-    int i;
-    if ((p->izquierdo == NULL) && (p->derecho == NULL)) {
-        printf("\n\t%c Código : ", p->dato);
-        for (i = 0; i < n; i++) printf("%d", c[i]);
-    } else {
-        c[n] = 0;
-        n++;
-        asigna_codigo(p->izquierdo, c, n);
-        c[n - 1] = 1;
-        asigna_codigo(p->derecho, c, n);
+
+void decodificarTextoConCola(const char* nombreArchivoCodificado, const char* nombreArchivoDecodificado, Arbol arbolHuffman) {
+    FILE* archivoCodificado = fopen(nombreArchivoCodificado, "r");
+    FILE* archivoDecodificado = fopen(nombreArchivoDecodificado, "w");
+    Cola* cola = crearCola();
+    char bit;
+    Arbol actual = arbolHuffman;
+    Dato_cola dato;
+
+    if (archivoCodificado == NULL || archivoDecodificado == NULL) {
+        perror("Error al abrir los archivos");
+        return;
     }
-}
-/* Borra el árbol creado */
-void borra_arbol(arbol *p) {
-    if (p != NULL) {
-        borra_arbol(p->izquierdo);
-        borra_arbol(p->derecho);
-        free(p);
+
+    // Encolar cada bit del archivo codificado en la cola
+    while ((bit = fgetc(archivoCodificado)) != EOF) {
+        if (bit == '0' || bit == '1') {
+            dato.valor = bit - '0';  // Convierte el caracter '0' o '1' a entero 0 o 1
+            encolar(cola, dato);
+        }
     }
-}
-/* Programa Principal */
-void main(void) {
-    arbol *p1;
-    int i, j, n, u, c[20];
-    char dato;
-    arbol *a[10]; /* Hasta 10 subárboles de inicio */
-    int frecuencia;
-    printf("Código de Huffman");
-    printf("\n\n\tEntra el número de caracteres a codificar: ");
-    scanf("%d", &n);
-    for (i = 0; i < n; i++) {
-        printf("\n\tEntra Carácter y Frecuencia: ");
-        scanf(" %c", &dato);  // Cambiado para manejar correctamente la entrada del carácter.
-        scanf("%d", &frecuencia);
-        a[i] = insertar(dato, frecuencia);
+
+    // Procesar cada bit en la cola para decodificar
+    while (!esColaVacia(cola)) {
+        desencolar(cola, &dato);
+        if (dato.valor == 0) {
+            actual = actual->izq;
+        } else {
+            actual = actual->der;
+        }
+
+        // Si es un nodo hoja, escribe el carácter y reinicia al nodo raíz
+        if (!actual->izq && !actual->der) {
+            fputc(actual->info.caracter, archivoDecodificado);
+            actual = arbolHuffman;
+        }
     }
-    while (n > 1) {
-        ordenar(a, n);
-        u = a[0]->frecuencia + a[1]->frecuencia;
-        dato = a[1]->dato;
-        p1 = insertar(dato, u);
-        p1->derecho = a[1];
-        p1->izquierdo = a[0];
-        a[0] = p1;
-        for (j = 1; j < n - 1; j++) a[j] = a[j + 1];
-        n--;
-    }
-    asigna_codigo(a[0], c, 0);
-    getchar();
-    borra_arbol(a[0]);
+
+    fclose(archivoCodificado);
+    fclose(archivoDecodificado);
+    liberarCola(cola);
 }

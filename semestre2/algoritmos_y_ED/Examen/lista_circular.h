@@ -34,4 +34,4 @@ void liberarLista(ListaCircular* lista);
 void ordenaSeleccion(ListaCircular* lista);
 int longitud(ListaCircular* lista);
 Nodo_lcde* extraerMenor(ListaCircular* lista);
-void insertarOrdenado(ListaCircular* lista, Nodo_lcde* nuevoNodo);
+Nodo_lcde* combinarNodos(Nodo_lcde* nodo1, Nodo_lcde* nodo2);
