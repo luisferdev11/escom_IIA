@@ -1,0 +1,77 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(
+    3,
+    1fr
+  ); /* Crea tres columnas de igual tamaño */
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.event-item {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.event-item.large {
+  grid-column: span 2; /* Hace que FlowFest ocupe dos columnas */
+  grid-row: span 2; /* Hace que FlowFest ocupe dos filas, si deseas que sea más grande verticalmente */
+}
+
+.event-item.medium {
+  grid-column: span 3;
+  grid-row: span 1;
+}
+
+.event-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.event-item h2,
+.event-item p {
+  padding: 10px;
+}
+
+@media (max-width: 800px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Una sola columna en dispositivos pequeños */
+  }
+
+  .event-item.large {
+    grid-column: span 1; /* Asegura que FlowFest no sea más grande en dispositivos pequeños */
+  }
+
+  .event-item.medium {
+    grid-column: span 1;
+  }
+}
+
+.events-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Distribuye las mini tarjetas uniformemente */
+  padding: 10px 0;
+}
+
+.event-card {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  margin: 5px;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.event-card:hover {
+  background-color: #e1e1e1; /* Cambia el color de fondo al pasar el mouse */
+}
+
+.event-name {
+  font-weight: bold;
+  text-align: center;
+}

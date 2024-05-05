@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="369a4c6f-1554-480d-b1da-d1079d606062" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Herencia/build.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Herencia/build/classes/.netbeans_automatic_build" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Herencia/build/classes/.netbeans_update_resources" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Herencia/build/classes/herencia/Herencia.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Herencia/build/classes/multiple/Becario.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Herencia/build/classes/multiple/Trabajador.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Herencia/build/classes/simple/Alumno.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Herencia/build/classes/simple/Persona.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Herencia/build/classes/simple/SerHumano.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Herencia/manifest.mf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Herencia/nbproject/build-impl.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Herencia/nbproject/genfiles.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Herencia/nbproject/private/private.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Herencia/nbproject/private/private.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Herencia/nbproject/project.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Herencia/nbproject/project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Herencia/src/herencia/Herencia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Herencia/src/multiple/Becario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Herencia/src/multiple/Trabajador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Herencia/src/simple/Alumno.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Herencia/src/simple/Persona.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Herencia/src/simple/SerHumano.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HerenciaMultiple.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../semestre2/algoritmos_y_ED/Examen/huffman.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../semestre2/algoritmos_y_ED/Examen/huffman.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../semestre2/algoritmos_y_ED/Examen/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../semestre2/algoritmos_y_ED/Examen/main.c" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="2fsY1X5NSLoN6Bj0OOLBWFnmYW6" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="369a4c6f-1554-480d-b1da-d1079d606062" name="Changes" comment="" />
+      <created>1714591039221</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1714591039221</updated>
+      <workItem from="1714591040241" duration="308000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -58,7 +58,7 @@ int main() {
     printf("Árbol de Huffman:\n");
     inOrden(arbolHuffman);
 
-    CodigoHuffman codigos[MAX_CHAR];  // Asegúrate de definir un tamaño adecuado
+    CodigoHuffman codigos[MAX_CHAR];
     int numCodigos = 0;
     generarCodigosHuffman(arbolHuffman, codigos, &numCodigos);
 

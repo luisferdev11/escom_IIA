@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="48f697ca-5f74-42c8-aa23-ce99b5f3ef5e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Casino.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/.netbeans_automatic_build" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/.netbeans_update_resources" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/casino/Casino.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/modelo/Dado.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/modelo/JuegoDeDado.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/modelo/Jugador.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manifest.mf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbproject/build-impl.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbproject/genfiles.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbproject/private/private.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbproject/private/private.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbproject/project.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbproject/project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Casino/casino/Casino.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Casino/modelo/Dado.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Casino/modelo/JuegoDeDado.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Casino/modelo/Jugador.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/casino/Casino.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modelo/Dado.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modelo/JuegoDeDado.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modelo/Jugador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Herencia/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Herencia/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Herencia/Herencia.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Herencia/build.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Herencia/build/classes/.netbeans_automatic_build" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Herencia/build/classes/.netbeans_update_resources" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Herencia/build/classes/herencia/Herencia.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Herencia/build/classes/simple/Persona.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Herencia/build/classes/simple/SerHumano.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Herencia/manifest.mf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Herencia/nbproject/build-impl.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Herencia/nbproject/genfiles.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Herencia/nbproject/private/private.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Herencia/nbproject/project.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Herencia/nbproject/project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Herencia/src/herencia/Herencia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Herencia/src/simple/Persona.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Herencia/src/simple/SerHumano.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/Herencia/build.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/Herencia/build/classes/.netbeans_automatic_build" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/Herencia/build/classes/.netbeans_update_resources" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/Herencia/build/classes/herencia/Herencia.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/Herencia/build/classes/multiple/Becario.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/Herencia/build/classes/multiple/Trabajador.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/Herencia/build/classes/simple/Alumno.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/Herencia/build/classes/simple/Persona.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/Herencia/build/classes/simple/SerHumano.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/Herencia/manifest.mf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/Herencia/nbproject/build-impl.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/Herencia/nbproject/genfiles.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/Herencia/nbproject/private/private.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/Herencia/nbproject/private/private.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/Herencia/nbproject/project.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/Herencia/nbproject/project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/Herencia/src/herencia/Herencia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/Herencia/src/multiple/Becario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/Herencia/src/multiple/Trabajador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/Herencia/src/simple/Alumno.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/Herencia/src/simple/Persona.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/Herencia/src/simple/SerHumano.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/HerenciaMultiple.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../semestre2/algoritmos_y_ED/Examen/huffman.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../semestre2/algoritmos_y_ED/Examen/huffman.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../semestre2/algoritmos_y_ED/Examen/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../semestre2/algoritmos_y_ED/Examen/main.c" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="2fsYhuKBb8Z9nuIOBaANNzMwkeS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "kotlin-language-version-configured": "true",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="48f697ca-5f74-42c8-aa23-ce99b5f3ef5e" name="Changes" comment="" />
+      <created>1714591375667</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1714591375667</updated>
+      <workItem from="1714591376676" duration="28000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

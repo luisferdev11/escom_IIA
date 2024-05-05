@@ -3,9 +3,9 @@
 
 // Función para crear el Árbol de Huffman a partir de la lista circular
 Arbol crearArbolHuffman(ListaCircular* lista) {
-    int tamaño = longitud(lista);
+    int tam = longitud(lista);
 
-    while (tamaño > 1) {  // Asumiendo que ListaCircular tiene un campo tamaño
+    while (tam > 1) {  // Asumiendo que ListaCircular tiene un campo tam
         // Extraer los dos nodos con menor frecuencia
         Nodo_lcde* nodo1 = extraerMenor(lista);  // Asumiendo que esta función está definida
         Nodo_lcde* nodo2 = extraerMenor(lista);  // Asumiendo que esta función está definida
@@ -18,11 +18,11 @@ Arbol crearArbolHuffman(ListaCircular* lista) {
 
         insertarFinal(lista, nuevoNodo->dato);
 
-        tamaño = longitud(lista);
-        printf("Tamaño de la lista temporal: %d\n", tamaño);
+        tam = longitud(lista);
+        printf("Tamaño de la lista temporal: %d\n", tam);
     }
 
-    printf("Tamaño de la lista terminando while: %d\n", tamaño);
+    printf("Tamaño de la lista terminando while: %d\n", tam);
 
     // Al final, el último nodo en la lista es la raíz del Árbol de Huffman
     return lista->cabeza->dato.arbol;  // Asumiendo que ListaCircular tiene una cabeza

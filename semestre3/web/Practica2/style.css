@@ -1,0 +1,76 @@
+/* Estilos generales para el cuerpo de la página */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #2b303a;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #556677;
+  color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: #fdf3a9;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+section {
+  background-color: #2b303a;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+}
+
+section h2 {
+  color: #d9e2ec;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+ul li {
+  color: #ffffff;
+}
+
+blockquote {
+  margin: 20px 0;
+  padding-left: 20px;
+  border-left: 5px solid #f0da4f;
+  color: #d9e2ec;
+  font-style: italic;
+}
+
+footer {
+  background-color: #556677;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  display: block;
+  margin: 10px auto; /* Centra la imagen */
+}
