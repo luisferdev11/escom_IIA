@@ -1,0 +1,114 @@
+--------------------------------------------------
+        Programa: mínimo versión recursiva
+--------------------------------------------------
+#include <stdio.h>
+
+char menor(char *);
+
+void main()
+{
+   char palab[256];
+   puts("Teclea una palabra: ");
+   gets(palab);
+   printf("\n El carActer mAs pequen~o es: %c", menor(palab));
+}
+
+char menor(char * pal)
+{
+   printf(" m(%s) \t", pal);   /* sólo para rastrear el avance */
+   if(*(pal + 1) == '\0')
+      return(*pal);
+   else
+   if(*pal < menor(pal + 1))
+      return(*pal);
+   else
+      return(menor(pal + 1));   
+}
+
+--------------------------------------------------
+  Programa: mínimo versión Programación Dinámica
+--------------------------------------------------
+#include <stdio.h>
+
+char menor(char *);
+
+void main()
+{
+   char palab[256];
+   puts("Teclea una palabra: ");
+   gets(palab);
+   printf("\n El carActer mAs pequen~o es: %c", menor(palab));
+}
+
+char menor(char * pal)
+{
+   char c;                            /* línea nueva */
+   printf(" m(%s) \t", pal);   /* sólo para rastrear el avance */
+   if(*(pal + 1) == '\0')
+      return(*pal);
+   else
+   if(*pal < (c = menor(pal + 1)))    /* línea nueva */
+      return(*pal);
+   else
+      return(c);                      /* línea nueva */
+}
+
+--------------------------------------------------
+      Programa: fibonacci versión recursiva
+--------------------------------------------------
+#include <stdio.h>
+
+int fibo(int);
+
+void main()
+{
+   int i;
+   puts(" Dame un número mayor que cero: ");
+   scanf("%d", &i);
+   printf("\n El elemento %d de la serie es: %d \n", i,fibo(i));
+}
+
+int fibo(int i)
+{
+   printf(" f(%d)\t", i);      /* sólo para rastrear el avance */
+   if((i == 1) || (i == 2))
+     return(1);
+   else
+     return(fibo(i - 2) + fibo(i - 1));
+}
+
+--------------------------------------------------
+    Programa: fibonacci Programación Dinámica
+--------------------------------------------------
+#include <stdio.h>
+
+int fibo(int, int *);
+
+void main()
+{
+   int i, j[2];
+   puts(" Dame un número mayor que cero: ");
+   scanf("%d", &i);
+   printf("\n El elemento %d de la serie es: %d \n", i,fibo(i, j));
+}
+
+int fibo(int i, int j[])
+{
+   int k = 0;
+   printf(" f(%d)\t", i);      /* sólo para rastrear el avance */
+   if((i == 1) || (i == 2))
+      return(1);
+   else
+   if(i == 3)
+   {
+      j[0] = 1;
+      j[1] = 1;
+   }
+   else
+   {
+      k = fibo(i - 1, j);
+      j[0] = j[1];
+      j[1] = k;
+   }
+   return(j[0] + j[1]);
+}

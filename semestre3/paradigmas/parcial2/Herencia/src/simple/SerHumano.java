@@ -1,15 +1,18 @@
 package simple;
 
 import java.util.Objects;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author Saul
  */
-public class SerHumano extends Object {
+public class SerHumano extends Object implements Runnable {
     private String genero;
     private double peso;
     private double talla;
+    private Thread unHilo;
     public SerHumano() {
 //        genero = "Masculino";
 //        peso = 0.0;
@@ -21,6 +24,8 @@ public class SerHumano extends Object {
         this.genero = genero;
         this.peso = peso;
         this.talla = talla;
+        unHilo = new Thread(this, genero);
+        unHilo.start();
     }
     public SerHumano(SerHumano humano) {
 //        genero = humano.genero;
@@ -34,6 +39,7 @@ public class SerHumano extends Object {
             }
         System.gc();
     }
+    
     public void setSerHumano(String genero, double peso, double talla) {
         this.genero = genero;
         this.peso = peso;
@@ -73,5 +79,23 @@ public class SerHumano extends Object {
                 "Genero: " + genero + "\n" + 
                 "Peso  : " + peso + "\n" +
                 "Talla : " + talla + "\n";
+    }
+
+    @Override
+    public void run() {
+        int contador = 0;
+        while(true) {
+            respirar();
+            try {
+                Thread.sleep(900);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(SerHumano.class.getName()).log(
+                        Level.SEVERE, null, ex);
+            }
+            contador++;
+            if(contador==10) {
+                break;
+                }
+            }
     }
 }

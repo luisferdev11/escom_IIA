@@ -2,120 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61022d1b-1928-403d-8be7-7961862c5ae0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../EagerLazy/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../EagerLazy/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../EagerLazy/EagerLazy.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../EagerLazy/build.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../EagerLazy/build/classes/.netbeans_automatic_build" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../EagerLazy/build/classes/.netbeans_update_resources" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../EagerLazy/build/classes/eager/EvaluadorEager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../EagerLazy/build/classes/eagerlazy/EagerLazy.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../EagerLazy/build/classes/lazy/EvaluadorLazy.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../EagerLazy/manifest.mf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../EagerLazy/nbproject/build-impl.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../EagerLazy/nbproject/genfiles.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../EagerLazy/nbproject/private/private.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../EagerLazy/nbproject/private/private.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../EagerLazy/nbproject/project.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../EagerLazy/nbproject/project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../EagerLazy/src/eager/EvaluadorEager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../EagerLazy/src/eagerlazy/EagerLazy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../EagerLazy/src/lazy/EvaluadorLazy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Velocidad.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/.netbeans_automatic_build" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/.netbeans_update_resources" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/modelo/Funcion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/modelo/FuncionPolimorfica.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/velocidad/Velocidad$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/velocidad/Velocidad$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/velocidad/Velocidad$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/velocidad/Velocidad$4.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/velocidad/Velocidad$5.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/velocidad/Velocidad$6.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/velocidad/Velocidad.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manifest.mf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbproject/build-impl.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbproject/genfiles.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbproject/private/private.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbproject/project.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbproject/project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modelo/Funcion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modelo/FuncionPolimorfica.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/velocidad/Velocidad.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Casino/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Casino/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Casino/Casino.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Casino/build.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Casino/build/classes/.netbeans_automatic_build" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Casino/build/classes/.netbeans_update_resources" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Casino/build/classes/casino/Casino.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Casino/build/classes/modelo/Dado.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Casino/build/classes/modelo/JuegoDeDado.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Casino/build/classes/modelo/Jugador.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Casino/manifest.mf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Casino/nbproject/build-impl.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Casino/nbproject/genfiles.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Casino/nbproject/private/private.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Casino/nbproject/private/private.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Casino/nbproject/project.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Casino/nbproject/project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Casino/out/production/Casino/casino/Casino.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Casino/out/production/Casino/modelo/Dado.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Casino/out/production/Casino/modelo/JuegoDeDado.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Casino/out/production/Casino/modelo/Jugador.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Casino/src/casino/Casino.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Casino/src/modelo/Dado.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Casino/src/modelo/JuegoDeDado.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Casino/src/modelo/Jugador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Herencia/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Herencia/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Herencia/Herencia.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Herencia/build.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Herencia/build/classes/.netbeans_automatic_build" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Herencia/build/classes/.netbeans_update_resources" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Herencia/build/classes/herencia/Herencia.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Herencia/build/classes/simple/Persona.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Herencia/build/classes/simple/SerHumano.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Herencia/manifest.mf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Herencia/nbproject/build-impl.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Herencia/nbproject/genfiles.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Herencia/nbproject/private/private.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Herencia/nbproject/project.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Herencia/nbproject/project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Herencia/src/herencia/Herencia.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Herencia/src/simple/Persona.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/Herencia/src/simple/SerHumano.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/HerenciaMultiple/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/HerenciaMultiple/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/HerenciaMultiple/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/HerenciaMultiple/Herencia/build.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/HerenciaMultiple/Herencia/build/classes/.netbeans_automatic_build" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/HerenciaMultiple/Herencia/build/classes/.netbeans_update_resources" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/HerenciaMultiple/Herencia/build/classes/herencia/Herencia.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/HerenciaMultiple/Herencia/build/classes/multiple/Becario.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/HerenciaMultiple/Herencia/build/classes/multiple/Trabajador.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/HerenciaMultiple/Herencia/build/classes/simple/Alumno.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/HerenciaMultiple/Herencia/build/classes/simple/Persona.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/HerenciaMultiple/Herencia/build/classes/simple/SerHumano.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/HerenciaMultiple/Herencia/manifest.mf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/HerenciaMultiple/Herencia/nbproject/build-impl.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/HerenciaMultiple/Herencia/nbproject/genfiles.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/HerenciaMultiple/Herencia/nbproject/private/private.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/HerenciaMultiple/Herencia/nbproject/private/private.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/HerenciaMultiple/Herencia/nbproject/project.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/HerenciaMultiple/Herencia/nbproject/project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/HerenciaMultiple/Herencia/src/herencia/Herencia.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/HerenciaMultiple/Herencia/src/multiple/Becario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/HerenciaMultiple/Herencia/src/multiple/Trabajador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/HerenciaMultiple/Herencia/src/simple/Alumno.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/HerenciaMultiple/Herencia/src/simple/Persona.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/HerenciaMultiple/Herencia/src/simple/SerHumano.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../parcial2/HerenciaMultiple/HerenciaMultiple.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../semestre2/algoritmos_y_ED/Examen/huffman.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../semestre2/algoritmos_y_ED/Examen/huffman.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../semestre2/algoritmos_y_ED/Examen/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../semestre2/algoritmos_y_ED/Examen/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../analisis_y_dis_algo/parcial2/ejemplos_dividir_y_conquistar/cuadrado01.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../analisis_y_dis_algo/parcial2/ejemplos_dividir_y_conquistar/cuadrado02.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../analisis_y_dis_algo/parcial2/ejemplos_dividir_y_conquistar/cuadrado03.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../analisis_y_dis_algo/parcial2/ejemplos_dividir_y_conquistar/cuadrado04.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../parcial2/Herencia/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../parcial2/Herencia/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../parcial2/Herencia/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../parcial2/Herencia/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../parcial2/Herencia/Herencia.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../parcial2/Herencia/build/classes/herencia/Herencia.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../parcial2/Herencia/build/classes/herencia/Herencia.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../parcial2/Herencia/build/classes/simple/Persona.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../parcial2/Herencia/build/classes/simple/Persona.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../parcial2/Herencia/build/classes/simple/SerHumano.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../parcial2/Herencia/build/classes/simple/SerHumano.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../parcial2/Herencia/src/herencia/Herencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../parcial2/Herencia/src/herencia/Herencia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../parcial2/Herencia/src/simple/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../parcial2/Herencia/src/simple/Persona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../parcial2/Herencia/src/simple/SerHumano.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../parcial2/Herencia/src/simple/SerHumano.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../web/Practica1/index (copy).html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../web/Practica1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../web/Practica1/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,22 +28,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2fsYnpfLVj4DgjmLq5M66zJme1f" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "kotlin-language-version-configured": "true",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -158,6 +61,7 @@
       <option name="presentableId" value="Default" />
       <updated>1714591422446</updated>
       <workItem from="1714591423450" duration="8000" />
+      <workItem from="1715036075395" duration="60000" />
     </task>
     <servers />
   </component>

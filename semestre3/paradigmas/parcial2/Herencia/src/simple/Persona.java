@@ -6,6 +6,8 @@
 package simple;
 
 import java.util.Objects;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -90,5 +92,22 @@ public class Persona extends SerHumano {
         return super.toString() + 
                 "Nombre: " + nombre + "\n" +
                 "Edad  : " + edad + "\n";
+    }
+    @Override
+    public void run() {
+        int contador = 0;
+        while(true) {
+            comer();
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(SerHumano.class.getName()).log(
+                        Level.SEVERE, null, ex);
+            }
+            contador++;
+            if(contador==3) {
+                break;
+                }
+            }
     }
 }

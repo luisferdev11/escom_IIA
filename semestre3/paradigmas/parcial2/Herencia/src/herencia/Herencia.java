@@ -1,6 +1,7 @@
 
 package herencia;
 
+import multiple.Becario;
 import simple.Persona;
 import simple.SerHumano;
 
@@ -52,6 +53,20 @@ public class Herencia {
         alguien = null;
         laura = null;
         System.gc();
+        
+        
+        Becario rocio = new Becario("Femenino", 3.56, 45.0, 
+                                    "Rocio Vazquez Perez", 18,
+                                    "202412340",
+                                    5890.12);
+        System.out.println(rocio);
+        rocio.respirar();
+        rocio.comer("Chilaquiles", "ESCOM");
+        rocio.estudiar("Paradigmas");
+        rocio.trabajar();
+        System.out.println(rocio.cobrar());
+        rocio.trabajar(2);
+        System.out.println(rocio.cobrar());
     }
     
 }
