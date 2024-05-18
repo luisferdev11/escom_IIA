@@ -5,11 +5,13 @@
  */
 package flauta;
 
+import Utensilios.Olla;
+
 /**
  *
  * @author jhona
  */
-public class Aguacate {
+public class Aguacate extends Olla {
     private String tipo;
     private String forma;
     public Aguacate(){

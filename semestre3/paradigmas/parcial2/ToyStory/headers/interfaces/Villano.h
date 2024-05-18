@@ -7,9 +7,9 @@
 class Villano {
 public:
     // puede destrutir Heroe, Villano, Juguete
-    virtual void destruir(Villano& miVillano) = 0;
-    virtual void destruir(Heroe& miHeroe) = 0;
-    virtual void destruir(Juguete& miJuguete) = 0;
+    virtual void destruir(Villano* miVillano) = 0;
+    virtual void destruir(Heroe* miHeroe) = 0;
+    virtual void destruir(Juguete* miJuguete) = 0;
     virtual void destruir() = 0;
     virtual ~Villano() {}
 };

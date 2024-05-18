@@ -3,12 +3,17 @@
 
 #include "interfaces/Villano.h"
 
-class Zurg : public Villano {
+class Zurg : public Villano, public Juguete {
 public:
-    void destruir(Villano& miVillano) override;
-    void destruir(Heroe& miHeroe) override;
-    void destruir(Juguete& miJuguete) override;
+    Zurg();
+    void destruir(Villano* miVillano) override;
+    void destruir(Heroe* miHeroe) override;
+    void destruir(Juguete* miJuguete) override;
     void destruir() override;
+    void jugar() override;
+
+    virtual void decirLaVerdad();
+    virtual void disparar();
 };
 
 #endif

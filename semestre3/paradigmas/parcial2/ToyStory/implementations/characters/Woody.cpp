@@ -1,6 +1,8 @@
 #include "characters/Woody.h"
 #include <iostream>
 
+Woody::Woody() : Juguete("Woody") {}
+
 void Woody::salvar() {
     std::cout << "Woody salva el día!" << std::endl;
 }

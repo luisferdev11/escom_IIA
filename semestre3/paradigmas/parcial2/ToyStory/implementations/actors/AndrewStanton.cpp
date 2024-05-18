@@ -6,5 +6,8 @@ AndrewStanton::AndrewStanton() : Actor("Andrew Stanton") {}
 
 void AndrewStanton::actuar() {
     std::cout << name << " está actuando como Zurg." << std::endl;
+    jugar();
     destruir();
+    decirLaVerdad();
+    disparar();
 }

@@ -5,97 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="369a4c6f-1554-480d-b1da-d1079d606062" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/build.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/build/classes/.netbeans_automatic_build" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/build/classes/.netbeans_update_resources" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/build/classes/Relleno/Agua.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/build/classes/Relleno/CarneDeRes.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/build/classes/Relleno/Cebolla.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/build/classes/Relleno/Hoja_laurel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/build/classes/Relleno/Papa.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/build/classes/Relleno/Pollo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/build/classes/Relleno/Sal.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/build/classes/Relleno/Tomate.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/build/classes/Utensilios/Comal.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/build/classes/Utensilios/Cuchillo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/build/classes/Utensilios/Olla.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/build/classes/Utensilios/Pelador.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/build/classes/Utensilios/Plato.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/build/classes/Utensilios/Sarten.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/build/classes/Utensilios/Servilleta.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/build/classes/flauta/Aceite.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/build/classes/flauta/Aguacate.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/build/classes/flauta/Ajo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/build/classes/flauta/Cilantro.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/build/classes/flauta/Crema.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/build/classes/flauta/Flauta.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/build/classes/flauta/Lechuga.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/build/classes/flauta/Palillo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/build/classes/flauta/Queso.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/build/classes/flauta/Relleno.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/build/classes/flauta/Salsa.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/build/classes/flauta/Tortilla.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/build/classes/metodos/metodos.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/build/classes/practica6/Practica6.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/manifest.mf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/nbproject/build-impl.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/nbproject/genfiles.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/nbproject/private/private.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/nbproject/private/private.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/nbproject/project.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/nbproject/project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/practica6.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/src/Relleno/Agua.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/src/Relleno/CarneDeRes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/src/Relleno/Cebolla.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/src/Relleno/Hoja_laurel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/src/Relleno/Papa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/src/Relleno/Pollo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/src/Relleno/Sal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/src/Relleno/Tomate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/src/Utensilios/Comal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/src/Utensilios/Cuchillo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/src/Utensilios/Olla.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/src/Utensilios/Pelador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/src/Utensilios/Plato.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/src/Utensilios/Sarten.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/src/Utensilios/Servilleta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/src/flauta/Aceite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/src/flauta/Aguacate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/src/flauta/Ajo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/src/flauta/Cilantro.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/src/flauta/Crema.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/src/flauta/Flauta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/src/flauta/Lechuga.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/src/flauta/Palillo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/src/flauta/Queso.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/src/flauta/Relleno.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/src/flauta/Salsa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/src/flauta/Tortilla.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/src/metodos/metodos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../p6-martin/practica6/src/practica6/Practica6.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../analisis_y_dis_algo/parcial2/ejemplos_dividir_y_conquistar/cuadrado01.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../analisis_y_dis_algo/parcial2/ejemplos_dividir_y_conquistar/cuadrado02.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../analisis_y_dis_algo/parcial2/ejemplos_dividir_y_conquistar/cuadrado03.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../analisis_y_dis_algo/parcial2/ejemplos_dividir_y_conquistar/cuadrado04.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../parcial1/Velocidad/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../parcial1/Velocidad/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Herencia/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Herencia/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Herencia/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Herencia/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Herencia/Herencia.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Herencia/build/classes/herencia/Herencia.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Herencia/build/classes/herencia/Herencia.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Herencia/build/classes/simple/Persona.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Herencia/build/classes/simple/Persona.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Herencia/build/classes/simple/SerHumano.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Herencia/build/classes/simple/SerHumano.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Herencia/src/herencia/Herencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Herencia/src/herencia/Herencia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Herencia/src/simple/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Herencia/src/simple/Persona.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Herencia/src/simple/SerHumano.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Herencia/src/simple/SerHumano.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../web/Practica1/index (copy).html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../web/Practica1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../web/Practica1/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ToyStory/ToyStoryModel" beforeDir="false" afterPath="$PROJECT_DIR$/../ToyStory/ToyStoryModel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ToyStory/headers/characters/Zurg.h" beforeDir="false" afterPath="$PROJECT_DIR$/../ToyStory/headers/characters/Zurg.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ToyStory/headers/interfaces/Villano.h" beforeDir="false" afterPath="$PROJECT_DIR$/../ToyStory/headers/interfaces/Villano.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ToyStory/implementations/actors/AndrewStanton.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../ToyStory/implementations/actors/AndrewStanton.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ToyStory/implementations/characters/Zurg.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../ToyStory/implementations/characters/Zurg.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ToyStory/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../ToyStory/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../p6-martin/practica6/src/flauta/Aguacate.java" beforeDir="false" afterPath="$PROJECT_DIR$/../p6-martin/practica6/src/flauta/Aguacate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../p6-martin/practica6/src/metodos/metodos.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +36,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/pillofon/Documents/escom/semestre3/paradigmas/parcial2/HerenciaMultiple",
+    "last_opened_file_path": "/home/pillofon/Downloads",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -145,6 +63,8 @@
       <updated>1714591039221</updated>
       <workItem from="1714591040241" duration="308000" />
       <workItem from="1715205876693" duration="114000" />
+      <workItem from="1715273888130" duration="95000" />
+      <workItem from="1715278575649" duration="285000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,257 @@
+@startuml
+
+  class Tortilla {
+    - String tipo
+    - String tamaño
+    + Tortilla(String, String)
+    + void calentar()
+    + boolean equals(Object)
+    + String toString()
+  }
+
+  class Aceite {
+    - String tipo
+    + Aceite(String)
+    + void calentar()
+    + boolean equals(Object)
+    + String toString()
+  }
+
+  class Queso {
+    - String tipo
+    + Queso(String)
+    + boolean equals(Object)
+    + String toString()
+  }
+
+  class Crema {
+    - String tipo
+    + Crema(String)
+    + boolean equals(Object)
+    + String toString()
+  }
+
+  class Lechuga {
+    - String tipo
+    - boolean cortado
+    + Lechuga(String)
+    + void cortar()
+    + boolean equals(Object)
+    + String toString()
+  }
+
+  class Jitomate {
+    - String tipo
+    - boolean cortado
+    + Jitomate(String)
+    + void cortar()
+    + boolean equals(Object)
+    + String toString()
+  }
+
+  class Cebolla {
+    - String tipo
+    - boolean cortado
+    - boolean pelado
+    + Cebolla(String)
+    + void cortar()
+    + void pelar()
+    + boolean equals(Object)
+    + String toString()
+  }
+
+  class Aguacate {
+    - String tipo
+    - boolean cortado
+    + Aguacate(String)
+    + void cortar()
+    + boolean equals(Object)
+    + String toString()
+  }
+
+  class Cilantro {
+    - String tipo
+    - boolean cortado
+    + Cilantro(String)
+    + void cortar()
+    + boolean equals(Object)
+    + String toString()
+  }
+
+  class Agua {
+    - int cantidad
+    - String unidad
+    + Agua(int, String)
+    + boolean equals(Object)
+    + String toString()
+  }
+
+  class Ajo {
+    - int cantidad
+    - String unidad
+    - boolean cortado
+    + Ajo(int, String)
+    + void cortar()
+    + boolean equals(Object)
+    + String toString()
+  }
+
+  class HojaDeLaurel {
+    - int cantidad
+    - String unidad
+    + HojaDeLaurel(int, String)
+    + boolean equals(Object)
+    + String toString()
+  }
+
+  class Sal {
+    - int cantidad
+    - String unidad
+    + Sal(int, String)
+    + boolean equals(Object)
+    + String toString()
+  }
+
+  class Papa {
+    - String tipo
+    - Sal sal
+    - int cantidad
+    - String unidad
+    - boolean pelado
+    + Papa(String, Sal, int, String)
+    + void cortar()
+    + void pelar()
+    + boolean equals(Object)
+    + String toString()
+  }
+
+
+
+  class Carne {
+    - String tipo
+    - Cebolla cebolla
+    - Ajo ajo
+    - HojaDeLaurel hojaDeLaurel
+    - Agua agua
+    - Sal sal
+    - int cantidad
+    - String unidad
+    + Carne(String, Cebolla, Ajo, HojaDeLaurel, Agua, Sal, int, String)
+    + void cocinar()
+    + boolean equals(Object)
+    + String toString()
+  }
+
+  class Pollo {
+    - String tipo
+    - Ajo ajo
+    - Cebolla cebolla
+    - Agua agua
+    - Sal sal
+    - int cantidad
+    - String unidad
+    + Pollo(String, Ajo, Cebolla, Agua, Sal, int, String)
+    + void cocinar()
+    + boolean equals(Object)
+    + String toString()
+  }
+
+  class Papa {
+    - String tipo
+    - Sal sal
+    - int cantidad
+    - String unidad
+    + Papa(String, Sal, int, String)
+    + void cocinar()
+    + boolean equals(Object)
+    + String toString()
+  }
+
+
+
+  class Olla {
+    - int capacidad
+    + Olla(int)
+    + void cocinar()
+    + boolean equals(Object)
+    + String toString()
+  }
+
+  class Sartén {
+    - int diámetro
+    + Sartén(int)
+    + void freír()
+    + boolean equals(Object)
+    + String toString()
+  }
+
+  class Comal {
+    - int tamaño
+    + Comal(int)
+    + void calentar()
+    + boolean equals(Object)
+    + String toString()
+  }
+
+  class Plato {
+    - String material
+    + Plato(String)
+    + boolean equals(Object)
+    + String toString()
+  }
+
+  class ToallaDePapel {
+    - String marca
+    + ToallaDePapel(String)
+    + boolean equals(Object)
+    + String toString()
+  }
+
+  class Cuchillo {
+    - String tipo
+    + Cuchillo(String)
+    + void cortar(Object)
+    + void pelar(Object)
+    + boolean equals(Object)
+    + String toString()
+  }
+
+
+
+  class Flauta {
+    - Tortilla tortilla
+    - Object relleno
+    - Palillo palillo
+    - Aceite aceite
+    - Queso queso
+    - Crema crema
+    - Lechuga lechuga
+    - Jitomate jitomate
+    - Cebolla cebolla
+    - Aguacate aguacate
+    - Cilantro cilantro
+    + Flauta(Tortilla, Object)
+    + void setPalillo(Palillo)
+    + void setAceite(Aceite)
+    + void setQueso(Queso)
+    + void setCrema(Crema)
+    + void setLechuga(Lechuga)
+    + void setJitomate(Jitomate)
+    + void setCebolla(Cebolla)
+    + void setAguacate(Aguacate)
+    + void setCilantro(Cilantro)
+    + void enrollar()
+    + void freir()
+    + boolean equals(Object)
+    + String toString()
+  }
+
+  class Palillo {
+    - int longitud
+    + Palillo(int)
+    + boolean equals(Object)
+    + String toString()
+  }
+
+@enduml
+

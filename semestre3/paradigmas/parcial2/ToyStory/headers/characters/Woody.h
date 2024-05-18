@@ -10,6 +10,7 @@
 
 class Woody : public Heroe, public AmigoFiel, public Jinete, public Sheriff, public Juguete, public Vaquero {
 public:
+    Woody();
     void salvar() override;
     void apoyar() override;
     void montar() override;
