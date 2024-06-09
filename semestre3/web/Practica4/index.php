@@ -10,7 +10,7 @@
     <h1>Trayectoria Académica</h1>
     <div class="trayectoria">
     <?php
-        include 'trayectoria.php';
+        require 'trayectoria.php';
 
         function mostrarCampo(?string $campo): string {
             return $campo !== '' ? $campo : '---';
