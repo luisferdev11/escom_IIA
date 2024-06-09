@@ -338,16 +338,3 @@ delete from carrera_materia where ctid in(select ctid from carrera_materia where
 delete from carrera_materia where ctid in(select ctid from carrera_materia where id_carrera=3 and id_materia=13 LIMIT 2);
 delete from carrera_materia where ctid in(select ctid from carrera_materia where id_carrera=3 and id_materia=6 LIMIT 2);
 delete from carrera_materia where ctid in(select ctid from carrera_materia where id_carrera=3 and id_materia=3 LIMIT 2);
-
--- Eliminar columna id_aula de la tabla Horario ya que la referencia ha sido movida a la tabla intermedia horario_aula
-ALTER TABLE horarios DROP COLUMN IF EXISTS id_aula;
-
--- Eliminar columna id_plantel de la tabla Carrera ya que la referencia ha sido movida a la tabla intermedia carrera_plantel
-ALTER TABLE carrera DROP COLUMN IF EXISTS id_plantel;
-
--- Eliminar columna id_carrera de la tabla Materia ya que la referencia ha sido movida a la tabla intermedia carrera_materia
-ALTER TABLE materia DROP COLUMN IF EXISTS id_carrera;
-
--- Eliminar columna id_grupo de la tabla Horario ya que la referencia ha sido movida a la tabla intermedia materia_horario
-ALTER TABLE horarios DROP COLUMN IF EXISTS id_grupo;
-
