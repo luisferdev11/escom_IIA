@@ -1,60 +1,95 @@
--- 1. Muestre solo a las personas que son Alumnos:
+-- 1. Muestre solo a las personas que son Alumnos.
+SELECT *
+FROM personas
+WHERE id IN (SELECT id_persona FROM estudiantes);
 
-SELECT p.*, e.id_boleta
-FROM personas p
-JOIN estudiantes e ON p.id = e.id_persona;
--- 2. Muestre solo a las personas que son Docentes:
+-- 2. Muestre solo a las personas que son Docentes.
+SELECT *
+FROM personas
+WHERE id IN (SELECT id_persona FROM docente);
 
-SELECT p.*
-FROM personas p
-JOIN docente d ON p.id = d.id_persona;
--- 3. Muestre el/los grupos de cada docente:
+-- 3. Muestre el/los grupos de cada docente.
+SELECT 
+    g.grupo,
+    (
+        SELECT CONCAT(p.nombre, ' ', p.primerapellido, ' ', p.segundoapellido) AS nombre_profesor
+        FROM Personas p
+        WHERE p.id = (SELECT d.id_persona FROM docente d WHERE d.id_profesor = g.id_profesor)
+    ) AS profesor
+FROM 
+    grupos g;
 
-SELECT d.id_persona, p.nombre, p.primerapellido, p.segundoapellido, g.codigo_grupo
-FROM docente d
-JOIN personas p ON d.id_persona = p.id
-JOIN grupos g ON d.id_persona = g.id_docente;
 -- 4. ¿Qué alumno o alumnos han reprobado?
-
-SELECT p.*, em.calificacion
+SELECT CONCAT(p.nombre, ' ', p.primerapellido, ' ', p.segundoapellido) AS alumnos_reprobados,
+(
+	SELECT MIN(em.calificacion)
+	FROM estudiante_materia em
+	WHERE em.id_boleta IN (
+		SELECT e.id_boleta
+		FROM estudiantes e
+		WHERE e.id_persona = P.id
+	)
+) AS calificacion
 FROM personas p
-JOIN estudiantes e ON p.id = e.id_persona
-JOIN estudiante_materia em ON e.id_boleta = em.id_boleta
-WHERE em.calificacion < 6.0;
+WHERE id IN (
+    SELECT id_persona 
+    FROM estudiantes 
+    WHERE id_boleta IN (
+        SELECT id_boleta 
+        FROM estudiante_materia 
+        WHERE calificacion < 6
+    )
+);
+
 -- 5. ¿Qué promedio tiene cada estudiante?
+SELECT 
+    id_persona,
+    (SELECT nombre FROM personas WHERE id = e.id_persona) AS nombre,
+    (SELECT primerapellido FROM personas WHERE id = e.id_persona) AS primerapellido,
+    (SELECT AVG(calificacion) FROM estudiante_materia WHERE id_boleta = e.id_boleta) AS promedio
+FROM estudiantes e;
 
-SELECT p.*, e.id_boleta, AVG(em.calificacion) AS promedio
-FROM personas p
-JOIN estudiantes e ON p.id = e.id_persona
-JOIN estudiante_materia em ON e.id_boleta = em.id_boleta
-GROUP BY p.id, e.id_boleta;
 -- 6. ¿Qué materia tiene cada carrera?
+SELECT nombre_materia AS materia, 
+       (SELECT nombre_carrera 
+        FROM Carrera c 
+        WHERE m.id_carrera = c.id_carrera) AS carrera
+FROM Materia m;
 
-SELECT c.nombre_carrera, m.nombre_materia
-FROM carrera c
-JOIN materia m ON c.id = m.id_carrera;
 -- 7. ¿Qué materias se imparten a las 10:00 pm?
+INSERT INTO horarios (id_materia, dia, hora_inicio, hora_fin, id_grupo, id_aula) VALUES 
+(1, 'Lunes', '22:00:00', '23:00:00', 1, 1),  -- Laboratorio
 
-SELECT m.nombre_materia, h.*
-FROM materia m
-JOIN horarios h ON m.id = h.id_materia
-WHERE h.hora_inicio = '22:00:00';
+SELECT *
+FROM materia
+WHERE id IN (
+    SELECT id_materia 
+    FROM horarios 
+    WHERE hora_inicio = '22:00:00'
+);
+
 -- 8. ¿Qué carreras se imparten en qué plantel?
+SELECT 
+    nombre_carrera,
+    (SELECT nombre_plantel FROM plantel WHERE id = c.id_plantel) AS nombre_plantel
+FROM carrera c;
 
-SELECT p.nombre_plantel, c.nombre_carrera
-FROM plantel p
-JOIN carrera c ON p.id = c.id_plantel;
--- 9. Muestre el horario de cada laboratorio:
+-- 9. Muestre el horario de cada laboratorio.
+SELECT *
+FROM horarios
+WHERE id_aula IN (
+    SELECT id 
+    FROM aula 
+    WHERE tipo = 'Laboratorio'
+);
 
-SELECT a.nombre_aula, h.*
-FROM aula a
-JOIN horarios h ON a.id = h.id_aula
-WHERE a.tipo = 'Laboratorio';
 -- 10. ¿En qué delegación/municipio existen más docentes?
-
-SELECT p.municipio, COUNT(d.id_persona) AS numero_docentes
-FROM personas p
-JOIN docente d ON p.id = d.id_persona
-GROUP BY p.municipio
+SELECT municipio, COUNT(*) AS numero_docentes
+FROM personas
+WHERE id IN (
+    SELECT id_persona 
+    FROM docente
+)
+GROUP BY municipio
 ORDER BY numero_docentes DESC
 LIMIT 1;
