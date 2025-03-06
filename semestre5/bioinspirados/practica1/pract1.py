@@ -36,8 +36,7 @@ for i in range(len(pendientes)-1):
         tangentes.append((t[i]+t[i+1])/2)
 
 
-
 print(tangentes)
 plt.plot(t, f)
-plt.plot(tangentes, np.sin(2*np.pi*np.array(tangentes)/5 + 0.2), 'ro')
+plt.plot(tangentes , np.sin(2* np.pi * np.array(tangentes)/5 + 0.2),'ro')
 plt.show()
