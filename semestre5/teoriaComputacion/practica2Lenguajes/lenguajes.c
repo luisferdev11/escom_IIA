@@ -73,7 +73,7 @@ TablaHash *lenguaje_potencia(TablaHash *lenguaje, int n) {
     }
     if (n == 0) {
         TablaHash *resultado = tabla_hash_crear(10);
-        tabla_hash_insertar(resultado, "");
+        tabla_hash_insertar(resultado, "&");
         return resultado;
     }
     if (n == 1) {
