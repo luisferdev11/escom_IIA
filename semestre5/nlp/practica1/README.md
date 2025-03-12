@@ -78,6 +78,7 @@ El reporte y el código, respectivamente, deberá incluir lo siguiente:
    El total de tareas de normalización debe ser de al menos 6.
 
    El orden en que se ejecutan las técnicas de normalización impacta el documento resultado de dicho flujo. Por tanto, el reporte debe incluir la justificación del orden en que el alumno decidió ejecutar cada una de las tareas de normalización.
+
 4. **Exploración de texto posterior a normalización (0 puntos).** Realizar lo mismo solicitado en el punto 2 pero esta vez sobre los textos obtenidos después de la etapa de normalización.
 5. **Análisis y conclusiones (25 puntos).** Se deben contrastar los resultados obtenidos en los puntos 2 y 4 para identificar las diferencias entre el texto original y el documento resultado después de haber sido normalizado. En específico, se debe indicar y argumentar el efecto que pudo o no haber tenido cada una de las técnicas de normalización aplicadas sobre los respectivos documentos.
 
@@ -86,8 +87,8 @@ El reporte y el código, respectivamente, deberá incluir lo siguiente:
 **Notas:**
 
 1. Las imágenes de código no son evidencia de funcionamiento.
-2. Se asignará una calificación de cero “0” en la práctica en caso de que:  
-   - No se entregue reporte de la misma.  
+2. Se asignará una calificación de cero “0” en la práctica en caso de que:
+   - No se entregue reporte de la misma.
    - El reporte y/o el código no se apeguen a las características indicadas en el documento “Reglas de Evaluación”.
 
 ## ANEXO “A”.
@@ -96,9 +97,37 @@ Cadenas de texto a analizar para la Parte 1 de la práctica
 AnexoA.txt:
 
 ```
-
-ID:Amount:Category:Date:Description 1:5.25:supply:20170222:box of staples 2:79.81:meal:20170222:lunch with ABC Corp. clients Al, Bob, and Cy 3:43.00:travel:20170222:cab back to office 4:383.75:travel:20170223:flight to Boston, to visit ABC Corp. 5:55.00:travel:20170223:cab to ABC Corp. in Cambridge, MA 6:23.25:meal:20170223:dinner at Logan Airport 7:318.47:supply:20170224:paper, toner, pens, paperclips, tape 8:142.12:meal:20170226:host dinner with ABC clients, Al, Bob, Cy, Dave, Ellie 9:303.94:util:20170227:Peoples Gas 10:121.07:util:20170227:Verizon Wireless 11:7.59:supply:20170227:Python book (used) 12:79.99:supply:20170227:spare 20" monitor 13:49.86:supply:20170228:Stoch Cal for Finance II 14:6.53:meal:20170302:Dunkin Donuts, drive to Big Inc. near DC 15:127.23:meal:20170302:dinner, Tavern64 16:33.07:meal:20170303:dinner, Uncle Julio's 17:86.00:travel:20170304:mileage, drive to/from Big Inc., Reston, VA 18:22.00:travel:20170304:tolls 19:378.81:travel:20170304:Hyatt Hotel, Reston VA, for Big Inc. meeting 20:1247.49:supply:20170306:Dell 7000 laptop/workstation 21:6.99:supply:20170306:HDMI cable 22:212.06:util:20170308:Duquesne Light 23:23.86:supply:20170309:Practical Guide to Quant Finance Interviews 24:195.89:supply:20170309:black toner, HP 304A, 2-pack 25:86.00:travel:20170317:mileage, drive to/from Big Inc., Reston, VA 26:32.27:meal:20170317:lunch at Clyde's with Fred and Gina, Big Inc. 27:22.00:travel:20170317:tolls 28:119.56:util:20170319:Verizon Wireless 29:284.23:util:20170323:Peoples Gas 30:8.98:supply:20170325:Flair pens
-
+ID:Amount:Category:Date:Description
+1:5.25:supply:20170222:box of staples
+2:79.81:meal:20170222:lunch with ABC Corp. clients Al, Bob, and Cy
+3:43.00:travel:20170222:cab back to office
+4:383.75:travel:20170223:flight to Boston, to visit ABC Corp.
+5:55.00:travel:20170223:cab to ABC Corp. in Cambridge, MA
+6:23.25:meal:20170223:dinner at Logan Airport
+7:318.47:supply:20170224:paper, toner, pens, paperclips, tape
+8:142.12:meal:20170226:host dinner with ABC clients, Al, Bob, Cy, Dave, Ellie
+9:303.94:util:20170227:Peoples Gas
+10:121.07:util:20170227:Verizon Wireless
+11:7.59:supply:20170227:Python book (used)
+12:79.99:supply:20170227:spare 20" monitor
+13:49.86:supply:20170228:Stoch Cal for Finance II
+14:6.53:meal:20170302:Dunkin Donuts, drive to Big Inc. near DC
+15:127.23:meal:20170302:dinner, Tavern64
+16:33.07:meal:20170303:dinner, Uncle Julio's
+17:86.00:travel:20170304:mileage, drive to/from Big Inc., Reston, VA
+18:22.00:travel:20170304:tolls
+19:378.81:travel:20170304:Hyatt Hotel, Reston VA, for Big Inc. meeting
+20:1247.49:supply:20170306:Dell 7000 laptop/workstation
+21:6.99:supply:20170306:HDMI cable
+22:212.06:util:20170308:Duquesne Light
+23:23.86:supply:20170309:Practical Guide to Quant Finance Interviews
+24:195.89:supply:20170309:black toner, HP 304A, 2-pack
+25:86.00:travel:20170317:mileage, drive to/from Big Inc., Reston, VA
+26:32.27:meal:20170317:lunch at Clyde's with Fred and Gina, Big Inc.
+27:22.00:travel:20170317:tolls
+28:119.56:util:20170319:Verizon Wireless
+29:284.23:util:20170323:Peoples Gas
+30:8.98:supply:20170325:Flair pens
 ```
 
 ## ANEXO “B”
