@@ -1,0 +1,18 @@
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.wmv
+*.flv
+*.webm
+*.m4v
+*.3gp
+*.ogv
+
+# Ignore pycache
+__pycache__/
+
+# Ignore virtual environment
+venv/
+.venv/
+
