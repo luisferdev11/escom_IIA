@@ -1,0 +1,1 @@
+Agregar las practicas de machin, todas están en colab, por lo que hay que descargarlas para subirlas acá
