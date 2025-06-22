@@ -6,12 +6,56 @@ import mediapipe as mp
 
 from core.pose_logic import process_frame, normalize_pose, calculate_pose_similarity
 from core.visualizer import SignalPlotter
+from core.report_generator import generate_report
 
 # Definir el landmark que queremos rastrear para la señal
 # mp_pose.PoseLandmark.RIGHT_WRIST.value -> 16
 TRACKED_LANDMARK_INDEX = 16 
 # El vector normalizado tiene 3 valores (x,y,z) por landmark. La Y es el segundo valor.
 TRACKED_COORDINATE_INDEX = (TRACKED_LANDMARK_INDEX * 3) + 1 
+
+
+class PoseSmoother:
+    def __init__(self, alpha=0.5):
+        self.alpha = alpha
+        self.last_landmarks = None
+
+    def smooth(self, current_landmarks):
+        if self.last_landmarks is None:
+            self.last_landmarks = current_landmarks
+            return current_landmarks
+
+        if current_landmarks is None:
+            return self.last_landmarks # Si no se detecta pose, devuelve la última conocida
+
+        smoothed_landmarks = []
+        for i in range(len(current_landmarks.landmark)):
+            curr_lm = current_landmarks.landmark[i]
+            last_lm = self.last_landmarks.landmark[i]
+            
+            # Aplicar EMA a cada coordenada (x, y, z)
+            new_x = self.alpha * curr_lm.x + (1 - self.alpha) * last_lm.x
+            new_y = self.alpha * curr_lm.y + (1 - self.alpha) * last_lm.y
+            new_z = self.alpha * curr_lm.z + (1 - self.alpha) * last_lm.z
+            
+            # Crear un nuevo landmark suavizado (es un poco complicado porque son protobufs)
+            # Una forma más fácil es operar sobre los arrays de numpy directamente.
+            
+        # Manera más sencilla con NumPy
+        current_coords = np.array([[lm.x, lm.y, lm.z] for lm in current_landmarks.landmark])
+        last_coords = np.array([[lm.x, lm.y, lm.z] for lm in self.last_landmarks.landmark])
+        
+        smoothed_coords = self.alpha * current_coords + (1 - self.alpha) * last_coords
+        
+        # Actualizar los landmarks en el objeto original (o crear uno nuevo)
+        for i in range(len(current_landmarks.landmark)):
+            current_landmarks.landmark[i].x = smoothed_coords[i, 0]
+            current_landmarks.landmark[i].y = smoothed_coords[i, 1]
+            current_landmarks.landmark[i].z = smoothed_coords[i, 2]
+            
+        self.last_landmarks = current_landmarks
+        return self.last_landmarks
+
 
 def run_realtime_comparison(video_path, pose_data_path):
     # --- 1. Carga y Validación ---
@@ -52,6 +96,11 @@ def run_realtime_comparison(video_path, pose_data_path):
     frame_idx = 0
     mp_drawing = mp.solutions.drawing_utils
     mp_pose = mp.solutions.pose
+    
+    # Lista para almacenar los datos del usuario para el reporte final
+    user_session_data = []
+
+    smoother = PoseSmoother(alpha=0.35) # Un alfa más bajo para más suavizado
 
     while cap_user.isOpened() and frame_idx < len(reference_poses_normalized):
         ret_user, user_frame = cap_user.read()
@@ -61,9 +110,14 @@ def run_realtime_comparison(video_path, pose_data_path):
             print("Finalizando: video de referencia o captura de cámara terminada.")
             break
 
-        # --- Procesamiento y Lógica ---
-        user_landmarks = process_frame(user_frame)
+        raw_user_landmarks = process_frame(user_frame)
+    
+        # ¡AQUÍ APLICAMOS EL FILTRO!
+        user_landmarks = smoother.smooth(raw_user_landmarks)
+        
         user_pose_vec = normalize_pose(user_landmarks)
+        # Acumular datos para el reporte
+        user_session_data.append(user_pose_vec)
         
         ref_pose_vec = reference_poses_normalized[frame_idx]
         
@@ -107,6 +161,11 @@ def run_realtime_comparison(video_path, pose_data_path):
     cap_ref.release()
     cv2.destroyAllWindows()
     for i in range(5): cv2.waitKey(1)
+
+    # --- 4. Generación del Reporte Post-Sesión ---
+    if user_session_data:
+        output_report_filename = "reporte_de_movimiento.png"
+        generate_report(reference_poses_normalized, user_session_data, output_report_filename)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Compara la pose de la cámara en tiempo real con datos de pose pre-procesados.")

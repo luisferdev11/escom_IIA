@@ -83,4 +83,32 @@ def calculate_pose_similarity(vec1, vec2):
     
     # Mapear de [-1, 1] a [0, 100]
     score = (similarity + 1) / 2 * 100
+    # escala la similitud de pose pues tiende a ser muy alta
+    score = scale_pose_similarity(score)
     return score 
+
+def scale_pose_similarity(score):
+    """
+    Escala la similitud de pose para hacerla más interpretable.
+    Los valores muy altos (95+) se reducen para mostrar diferencias más claras.
+    
+    Args:
+        score: Puntaje de similitud original (0-100)
+        
+    Returns:
+        Puntaje escalado (0-100)
+    """
+    # Aplicar una función de escalado no lineal
+    # Valores bajos se mantienen similares, valores altos se reducen más
+    if score < 80:
+        return score
+    elif score < 90:
+        # Entre 80-90, reducir ligeramente
+        return 80 + (score - 80) * 0.7
+    elif score < 95:
+        # Entre 90-95, reducir más
+        return 87 + (score - 90) * 0.6
+    else:
+        # 95+ se mapea a 87-95
+        return 87 + (score - 95) * 1.6
+
