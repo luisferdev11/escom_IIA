@@ -2,14 +2,21 @@
 
 Este proyecto es un prototipo para un sistema de análisis de baile que utiliza visión por computadora para comparar los movimientos de un usuario en tiempo real con una coreografía de referencia, mostrando una parrilla de análisis 2x2.
 
+Al finalizar la sesión, genera un reporte detallado en Markdown con métricas de rendimiento y gráficos comparativos que analizan la precisión y la fluidez del movimiento.
+
 ---
 
 ## Características
 
-- **Análisis Modular:** El código está separado en módulos para pre-procesamiento y análisis en tiempo real.
-- **Visualización 2x2:** Muestra simultáneamente el video de referencia, la cámara del usuario, un esqueleto de referencia aislado y una gráfica de señales.
-- **Pre-procesamiento Eficiente:** Un script dedicado analiza el video de referencia una sola vez, generando un archivo de datos para un inicio casi instantáneo de la aplicación principal.
-- **Análisis de Señales:** Grafica la trayectoria de un punto corporal (ej. muñeca) a lo largo del tiempo para un análisis detallado del movimiento.
+- **Análisis Modular:** El código está separado en módulos para pre-procesamiento, lógica de pose, motor de puntuación, análisis de señales y generación de reportes.
+- **Visualización 2x2:** Muestra simultáneamente el video de referencia, la cámara del usuario, un esqueleto de referencia aislado y una gráfica de señales en tiempo real.
+- **Motor de Puntuación Avanzado:**
+  - **Precisión Ponderada:** Da más importancia a las articulaciones clave (caderas, hombros) para una evaluación más realista de la postura.
+  - **Análisis de Dinámica:** Compara la velocidad de movimiento entre el usuario y la referencia, premiando no solo la pose correcta, sino el movimiento correcto.
+- **Reportes Post-Sesión Detallados:**
+  - Genera automáticamente una carpeta por cada sesión con un reporte en formato Markdown.
+  - Incluye métricas clave como Puntuación Media, Consistencia y la identificación de las articulaciones con mejor y peor rendimiento.
+  - **Análisis con Filtro EMA:** Muestra gráficos comparativos de articulaciones y precisión, contrastando los datos en crudo (Raw) con una versión suavizada (EMA) para visualizar la tendencia real del movimiento.
 
 ---
 
@@ -20,25 +27,34 @@ El proyecto está organizado en una estructura limpia para facilitar la mantenib
 ```
 .
 ├── core/
-│   ├── pose_logic.py     # Lógica central para detección y análisis de poses.
-│   └── visualizer.py     # Clase para generar el gráfico de señales.
-├── preprocess_video.py     # Script para procesar el video de referencia.
-├── run_comparison.py       # Script principal para ejecutar la aplicación.
-├── requirements.txt        # Lista de dependencias de Python.
-├── README.md               # Este archivo.
-└── .venv/                    # Directorio del entorno virtual (ignorado por Git).
+│   ├── pose_logic.py          # Lógica central para detección y análisis de poses.
+│   ├── scoring_engine.py      # Clase para el cálculo de puntuación (precisión + dinámica).
+│   ├── signal_processing.py   # Funciones de utilidad para análisis de señales (ej. filtro EMA).
+│   └── visualizer.py          # Clase para generar el gráfico de señales en tiempo real.
+├── reports/
+│   └── 2023-10-27_10-30-00/   # Ejemplo de carpeta de reporte generada automáticamente.
+│       ├── report.md
+│       └── ... (imágenes de gráficos)
+├── preprocess_video.py        # Script para procesar el video de referencia.
+├── run_comparison.py          # Script principal para ejecutar la aplicación.
+├── requirements.txt           # Lista de dependencias de Python.
+└── README.md                  # Este archivo.
 ```
 
 ### Descripción de Componentes
 
 - **`core/`**: Este directorio es el corazón del proyecto y contiene toda la lógica de negocio reutilizable.
 
-  - `pose_logic.py`: Encapsula toda la interacción con MediaPipe. Se encarga de procesar fotogramas, normalizar coordenadas y calcular la similitud entre poses.
-  - `visualizer.py`: Contiene la clase `SignalPlotter`, responsable de crear y actualizar el gráfico de Matplotlib y convertirlo en una imagen que OpenCV pueda mostrar.
+  - `pose_logic.py`: Encapsula la interacción con MediaPipe para procesar fotogramas y normalizar coordenadas.
+  - `scoring_engine.py`: Implementa la lógica de evaluación avanzada, combinando precisión ponderada y dinámica de movimiento para generar una puntuación.
+  - `signal_processing.py`: Contiene funciones para manipular y analizar las señales de datos, como el filtro de Media Móvil Exponencial (EMA).
+  - `visualizer.py`: Gestiona el gráfico de Matplotlib que se muestra en tiempo real durante la sesión.
 
-- **`preprocess_video.py`**: Una herramienta de línea de comandos que se ejecuta una vez por cada video. Analiza la coreografía, extrae los datos de pose (landmarks y vectores normalizados) y los guarda en un archivo `.npy` comprimido para su uso posterior.
+- **`reports/`**: Este directorio es creado automáticamente y contiene los reportes de cada sesión. Cada subcarpeta, nombrada con fecha y hora, almacena un `report.md` y todos los gráficos asociados.
 
-- **`run_comparison.py`**: El punto de entrada para el usuario final. Carga los datos pre-procesados, inicia la cámara y organiza la parrilla de visualización 2x2, orquestando los módulos del directorio `core`.
+- **`preprocess_video.py`**: Herramienta de línea de comandos que se ejecuta una vez por video para analizar la coreografía y guardar los datos de pose en un archivo `.npy`.
+
+- **`run_comparison.py`**: El punto de entrada para el usuario. Orquesta todos los módulos, ejecuta la sesión en tiempo real y, al finalizar, dispara la generación del reporte.
 
 ---
 
@@ -47,8 +63,6 @@ El proyecto está organizado en una estructura limpia para facilitar la mantenib
 Sigue estos pasos para ejecutar el prototipo.
 
 ### 1. Configuración del Entorno
-
-Asegúrate de tener Python 3.8+ instalado. Luego, crea un entorno virtual e instala las dependencias.
 
 ```bash
 # Crear y activar un entorno virtual (en Linux/macOS)
@@ -59,32 +73,24 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 2. Consigue un Video de Referencia
+### 2. Pre-procesa un Video de Referencia
 
-Busca un video de un baile que quieras imitar. Guárdalo en el directorio raíz del proyecto. Para este ejemplo, supongamos que se llama `baile.mp4`.
-
-### 3. Pre-procesa el Video
-
-Ahora, usa el script `preprocess_video.py` para analizar el video y crear el archivo de datos de la coreografía. Este paso solo se hace una vez por video.
-
-- El primer argumento es el video de entrada.
-- El segundo argumento es el archivo de salida donde se guardarán los datos.
+Este paso solo se hace una vez por video.
 
 ```bash
-python3 preprocess_video.py baile.mp4 baile_data.npy
+python3 preprocess_video.py tu_video.mp4 tus_datos.npy
 ```
 
-Verás una barra de progreso mientras se procesa el video. Al terminar, tendrás un nuevo archivo `baile_data.npy` en tu directorio.
+### 3. Ejecuta la Comparación en Tiempo Real
 
-### 4. Ejecuta la Comparación en Tiempo Real
-
-¡Es hora de bailar! Ejecuta el script `run_comparison.py`.
-
-- El primer argumento es el video de referencia original (para visualización).
-- El segundo argumento es el archivo de datos de pose que acabas de crear.
+¡Es hora de bailar!
 
 ```bash
-python3 run_comparison.py baile.mp4 baile_data.npy
+python3 run_comparison.py tu_video.mp4 tus_datos.npy
 ```
 
-Se abrirá una ventana mostrando la parrilla de análisis 2x2. Presiona la tecla `q` para salir.
+Se abrirá la ventana de análisis 2x2. Baila y, cuando termines, presiona la tecla `q` para salir.
+
+### 4. Revisa tu Reporte
+
+Al cerrar la aplicación, se generará automáticamente un reporte. Busca la nueva carpeta creada dentro del directorio `reports/` y abre el archivo `report.md` para ver un análisis detallado de tu rendimiento.

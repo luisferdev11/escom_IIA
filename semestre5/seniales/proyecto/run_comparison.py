@@ -4,9 +4,10 @@ import argparse
 import os
 import mediapipe as mp
 
-from core.pose_logic import process_frame, normalize_pose, calculate_pose_similarity
+from core.pose_logic import process_frame, normalize_pose
 from core.visualizer import SignalPlotter
-from core.report_generator import generate_report
+from core.report_generator import ReportGenerator
+from core.scoring_engine import ScoringEngine
 
 # Definir el landmark que queremos rastrear para la señal
 # mp_pose.PoseLandmark.RIGHT_WRIST.value -> 16
@@ -77,7 +78,9 @@ def run_realtime_comparison(video_path, pose_data_path):
         print("Error: No se pudo abrir el video de referencia o la cámara del usuario.")
         return
 
-    # --- 2. Inicialización del Visualizador de Señales ---
+    # --- 2. Inicialización de Motores ---
+    scorer = ScoringEngine()
+
     # Determinar las dimensiones de los cuadrantes basado en la cámara del usuario
     user_w = int(cap_user.get(cv2.CAP_PROP_FRAME_WIDTH))
     user_h = int(cap_user.get(cv2.CAP_PROP_FRAME_HEIGHT))
@@ -110,18 +113,22 @@ def run_realtime_comparison(video_path, pose_data_path):
             print("Finalizando: video de referencia o captura de cámara terminada.")
             break
 
-        raw_user_landmarks = process_frame(user_frame)
-    
-        # ¡AQUÍ APLICAMOS EL FILTRO!
-        user_landmarks = smoother.smooth(raw_user_landmarks)
-        
+        # --- Procesamiento y Lógica ---
+        user_landmarks = process_frame(user_frame)
         user_pose_vec = normalize_pose(user_landmarks)
-        # Acumular datos para el reporte
-        user_session_data.append(user_pose_vec)
         
         ref_pose_vec = reference_poses_normalized[frame_idx]
         
-        score = calculate_pose_similarity(user_pose_vec, ref_pose_vec)
+        # --- Puntuación ---
+        score, precision, dynamics = scorer.calculate_frame_score(user_pose_vec, ref_pose_vec)
+
+        # Acumular datos para el reporte
+        user_session_data.append({
+            'pose_vec': user_pose_vec,
+            'overall': score,
+            'precision': precision,
+            'dynamics': dynamics
+        })
 
         # --- Actualización del Gráfico de Señal ---
         user_signal_value = user_pose_vec[TRACKED_COORDINATE_INDEX] if user_pose_vec is not None else np.nan
@@ -132,7 +139,11 @@ def run_realtime_comparison(video_path, pose_data_path):
         mp_drawing.draw_landmarks(user_frame, user_landmarks, mp_pose.POSE_CONNECTIONS,
                                   mp_drawing.DrawingSpec(color=(245, 117, 66), thickness=2, circle_radius=2),
                                   mp_drawing.DrawingSpec(color=(245, 66, 230), thickness=2, circle_radius=2))
-        cv2.putText(user_frame, f'Puntaje: {int(score)}%', (10, 40), cv2.FONT_HERSHEY_TRIPLEX, 1, (0, 255, 0), 2)
+        
+        # Mostrar puntaje desglosado
+        cv2.putText(user_frame, f'Score: {int(score)}%', (10, 40), cv2.FONT_HERSHEY_TRIPLEX, 1, (0, 255, 0), 2)
+        cv2.putText(user_frame, f' Precision: {int(precision)}%', (15, 80), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (200, 255, 200), 2)
+        cv2.putText(user_frame, f' Dinamica: {int(dynamics)}%', (15, 110), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (200, 255, 200), 2)
 
         # B. Crea la vista del esqueleto de referencia
         skeleton_view = np.zeros((q_h, q_w, 3), dtype=np.uint8)
@@ -164,8 +175,9 @@ def run_realtime_comparison(video_path, pose_data_path):
 
     # --- 4. Generación del Reporte Post-Sesión ---
     if user_session_data:
-        output_report_filename = "reporte_de_movimiento.png"
-        generate_report(reference_poses_normalized, user_session_data, output_report_filename)
+        # Pasamos los datos de referencia normalizados y los datos de sesión del usuario
+        report_generator = ReportGenerator(reference_poses_normalized, user_session_data)
+        report_generator.generate()
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Compara la pose de la cámara en tiempo real con datos de pose pre-procesados.")
