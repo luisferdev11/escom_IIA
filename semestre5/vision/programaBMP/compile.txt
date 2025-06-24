@@ -1,0 +1,1 @@
+g++ -std=c++17 -I BMP_Viewer_Cpp/include/ BMP_Viewer_Cpp/src/main.cpp BMP_Viewer_Cpp/src/bmp.cpp BMP_Viewer_Cpp/src/bmp_reader.cpp BMP_Viewer_Cpp/src/renderer.cpp BMP_Viewer_Cpp/src/converter_rgb.cpp BMP_Viewer_Cpp/src/converter_hsb.cpp BMP_Viewer_Cpp/src/converter_cmyk.cpp BMP_Viewer_Cpp/src/converter_lab.cpp BMP_Viewer_Cpp/src/converter_xyz.cpp -o visor_bmp -lSDL2
